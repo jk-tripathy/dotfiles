@@ -1,5 +1,27 @@
 let mapleader=" "
 
+" Basic Settings
+set encoding=UTF-8
+syntax on
+set expandtab
+set wildmenu
+set number
+set relativenumber
+set autoread
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set cursorline
+set hls is
+set hidden
+set noerrorbells
+set smartindent
+set nowrap
+set incsearch
+set scrolloff=8
+set colorcolumn=80
+set signcolumn=yes
+
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
@@ -17,22 +39,7 @@ call plug#end()
 
 let g:airline_theme = 'gruvbox'
 colorscheme gruvbox
-
-" Basic Settings
-set encoding=UTF-8
-syntax on
-set expandtab
-set wildmenu
-set number
-set relativenumber
-set autoread
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set cursorline
-set hls is
-
 " Key Maps
 nmap <leader>gd <Plug>(coc-definitions)
 nmap <leader>gd <Plug>(coc-references)
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :Files<CR>
