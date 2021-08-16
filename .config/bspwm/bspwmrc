@@ -1,0 +1,16 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+zsh ~/.config/polybar/launch.sh --shades &
+
+bspc monitor -d I II III IV V
+
+bspc config border_width         2
+bspc config window_gap          10
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a kitty desktop='^1' follow=on
+bspc rule -a Google-chrome desktop='^2' follow=on
