@@ -43,6 +43,22 @@ super + b
 	google-chrome-stable
 
 #
+# Volume 
+#
+XF86AudioLowerVolume
+	amixer -c 1 set Master 5%- 
+XF86AudioRaiseVolume
+	amixer -c 1 set Master 5%+
+XF86AudioMute
+    amixer -c 1 set Master toggle && amixer -c 1 set Speaker toggle && -c 1 Headphone toggle
+
+#
+# Brightness Control
+#
+XF86MonBrightness{Up,Down}
+    brightnessctl s 10{+,-}
+
+#
 # state/flags
 #
 
