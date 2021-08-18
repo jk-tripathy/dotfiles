@@ -37,10 +37,18 @@ super + y
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window
+# lock computer
+super + l
+    ./betterlockscreen-master/betterlockscreen -l dimblur
+
+#
+# Apps
+#
 
 # browser hotkey
 super + {shift + b, b}
     {min, google-chrome-stable}
+
 #
 # Volume 
 #
