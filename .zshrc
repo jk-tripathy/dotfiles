@@ -1,4 +1,4 @@
-if [[ "$(tty)" = "/dev/tty1" ]]; then
+if [[ "$(tty)" = "/dev/tty1" ]]; then   
 	pgrep bspwm || startx
 fi
 
@@ -11,7 +11,6 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 
 export ZSH="/home/jkt/.oh-my-zsh"
 
@@ -114,5 +113,9 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias nv="nvim"
 alias c="clear"
+alias ani="$HOME/.local/bin/anime"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
