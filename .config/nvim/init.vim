@@ -1,9 +1,13 @@
 let mapleader=" "
 
+"
 " Basic Settings
-set spell spelllang=en_gb
-set encoding=UTF-8
+"
+filetype plugin indent on
 syntax on
+set hidden
+set path=.,**
+set encoding=UTF-8
 set expandtab
 set wildmenu
 set number
@@ -23,7 +27,9 @@ set scrolloff=10
 set signcolumn=yes
 set updatetime=100
 
+"
 " Plugins
+"
 call plug#begin('~/.config/nvim/plugged')
 
 " General
@@ -44,18 +50,31 @@ Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
+"
+" Spell Checks for certain files
+"
+autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_gb
+
+"
 " Colour
+"
 let g:airline_theme = 'gruvbox'
 colorscheme gruvbox
 
+"
 " Key Maps
+"
 nmap <leader>gd <Plug>(coc-definitions)
 nmap <leader>gd <Plug>(coc-references)
 nnoremap <leader>g :Goyo<CR>
 nnoremap <C-p> :Files<CR>
 
+"
+" Plugin Configs
+"
+
 " plasticboy/goyo
 let g:vim_markdown_folding_disabled = 1
 
 " iamcco/markdown-preview
-let g:mkdp_refresh_slow = 1
+let g:mkdp_browser = 'min'

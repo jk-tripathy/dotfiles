@@ -39,19 +39,17 @@ super + g
 	bspc node -s biggest.window
 
 # browser hotkey
-super + b
-	google-chrome-stable
-
+super + {shift + b, b}
+    {min, google-chrome-stable}
 #
 # Volume 
 #
-XF86AudioLowerVolume
-	amixer -c 1 set Master 5%- 
-XF86AudioRaiseVolume
-	amixer -c 1 set Master 5%+
+XF86Audio{RaiseVolume,LowerVolume}
+    pulsemixer --change-volume {+,-}5
 XF86AudioMute
-    amixer -c 1 set Master toggle && amixer -c 1 set Speaker toggle && -c 1 Headphone toggle
-
+    pulsemixer --toggle-mute
+XF86AudioMicMute
+    amixer set Capture toggle
 #
 # Brightness Control
 #
