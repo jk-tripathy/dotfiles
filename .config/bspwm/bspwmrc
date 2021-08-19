@@ -5,8 +5,11 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 .config/polybar/shades/launch.sh &
 
 bspc monitor eDP -n 0 -d I II III IV V
-bspc monitor HDMI-A-0 -n 1 -d VI VII VIII IX X
-
+my_laptop_external_monitor=$(xrandr --query | grep 'DisplayPort-0')                 
+echo $my_laptop_external_monitor                                                    
+if [[ $my_laptop_external_monitor != *disconnected* ]]; then                         
+    bspc monitor DisplayPort-0 -n 1 -d VI VII VIII IX X
+fi     
 bspc config border_width         2
 bspc config window_gap          12
 
