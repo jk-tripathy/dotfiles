@@ -38,7 +38,7 @@ super + y
 super + g
 	bspc node -s biggest.window
 # lock computer
-super + l
+ctrl + alt + l
     ./betterlockscreen-master/betterlockscreen -l dimblur
 
 #
