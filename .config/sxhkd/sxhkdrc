@@ -39,7 +39,7 @@ super + g
 	bspc node -s biggest.window
 # lock computer
 ctrl + alt + l
-    ./betterlockscreen-master/betterlockscreen -l dimblur
+    ./betterlockscreen-master/betterlockscreen -l dimpixel
 
 #
 # Apps
