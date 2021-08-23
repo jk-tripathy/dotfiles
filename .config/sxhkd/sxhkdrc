@@ -45,6 +45,10 @@ ctrl + alt + l
 # Apps
 #
 
+# screenshot -> clipboard
+super + s
+    maim -s -u | xclip -selection clipboard -t image/png -i
+
 # browser hotkey
 super + {shift + b, b}
     {min, google-chrome-stable}
