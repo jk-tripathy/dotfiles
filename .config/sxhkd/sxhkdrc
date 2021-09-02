@@ -41,10 +41,13 @@ super + g
 ctrl + alt + l
     ./betterlockscreen-master/betterlockscreen -l dimpixel
 
+#shutdown computer
+ctrl + alt + s
+    shutdown now
+
 #
 # Apps
 #
-
 # screenshot -> clipboard
 super + s
     maim -s -u | xclip -selection clipboard -t image/png -i
@@ -52,6 +55,10 @@ super + s
 # browser hotkey
 super + {shift + b, b}
     {min, google-chrome-stable}
+
+# Thunar
+super + f
+    thunar
 
 #
 # Volume 
@@ -73,8 +80,8 @@ XF86MonBrightness{Up,Down}
 #
 
 # set the window state
-super + {t,shift + f,f}
-	bspc node -t {tiled,floating,fullscreen}
+super + {t,shift + f}
+	bspc node -t {tiled,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
