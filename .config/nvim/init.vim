@@ -62,7 +62,7 @@ call plug#end()
 "
 " Spell Checks for certain files
 "
-autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_gb
+autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_gb,de_de
 
 "
 " Colour

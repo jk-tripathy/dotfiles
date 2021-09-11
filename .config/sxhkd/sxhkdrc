@@ -54,7 +54,7 @@ super + s
 
 # browser hotkey
 super + {shift + b, b}
-    {min, google-chrome-stable}
+    {min, brave}
 
 # Thunar
 super + f
