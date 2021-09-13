@@ -52,9 +52,9 @@ ctrl + alt + s
 super + s
     maim -s -u | xclip -selection clipboard -t image/png -i
 
-# browser hotkey
+# browser 
 super + {shift + b, b}
-    {min, brave}
+    {min, vivaldi-stable}
 
 # Thunar
 super + f
