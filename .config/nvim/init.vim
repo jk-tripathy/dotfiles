@@ -49,6 +49,8 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 
+" LaTeX
+
 " Themes
 Plug 'tomasiser/vim-code-dark'
 Plug 'morhetz/gruvbox'
@@ -62,8 +64,8 @@ call plug#end()
 "
 " Spell Checks for certain files
 "
-autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_gb,de_de
-
+autocmd FileType tex,latex,md,markdown setlocal spell spelllang=en_gb,de_de
+autocmd FileType tex,latex,md,markdown setlocal wrap linebreak
 "
 " Colour
 "
@@ -100,6 +102,13 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" Markdown
+map <leader>md :MarkdownPreview<CR>
+
+" latex
+nnoremap <leader>lx :execute "!pdflatex %"<CR>
+nnoremap <leader>lxp :!zathura %:r.pdf &<CR><CR>
+
 " Others
 nnoremap <leader>g :Goyo<CR>
 nnoremap <C-p> :Files<CR>
@@ -115,4 +124,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " iamcco/markdown-preview
 let g:mkdp_browser = 'min'
-map <leader>md :MarkdownPreview<CR>
+
+" latex live preview 
+let g:livepreview_previewer = 'zathura'
