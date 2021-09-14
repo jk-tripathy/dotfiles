@@ -106,7 +106,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 map <leader>md :MarkdownPreview<CR>
 
 " latex
-nnoremap <leader>lx :execute "!pdflatex %"<CR>
+nnoremap <leader>lx :!pdflatex %<CR><CR> <bar> :!biber %:r<CR> <bar> :!pdflatex %<CR>
 nnoremap <leader>lxp :!zathura %:r.pdf &<CR><CR>
 
 " Others
@@ -124,6 +124,3 @@ let g:vim_markdown_folding_disabled = 1
 
 " iamcco/markdown-preview
 let g:mkdp_browser = 'min'
-
-" latex live preview 
-let g:livepreview_previewer = 'zathura'
