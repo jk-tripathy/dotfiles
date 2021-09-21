@@ -51,8 +51,8 @@ ctrl + alt + l
 #
 
 # set the window state
-super + {t,shift + f}
-	bspc node -t {tiled,fullscreen}
+super + {t,shift+t, shift + f}
+	bspc node -t {tiled,floating,fullscreen}
 
 #
 # focus/swap
@@ -99,7 +99,7 @@ super + s
 
 # browser 
 super + {shift + b, b}
-    {min, vivaldi-stable}
+    {min, google-chrome-stable}
 
 # Thunar
 super + f
