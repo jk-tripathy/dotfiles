@@ -16,6 +16,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'vimwiki/vimwiki'
 
+" Flutter
+Plug 'natebosch/dartlang-snippet'
+
 " Nerd Tree
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'

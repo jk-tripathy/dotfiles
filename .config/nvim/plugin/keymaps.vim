@@ -53,7 +53,7 @@ nnoremap <leader>lxp :!zathura %:r.pdf &<CR><CR>
 
 " Others
 nnoremap <leader>g :Goyo<CR>
-nnoremap <C-p> :Files<CR>
+nnoremap <C-p> :GFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 
