@@ -19,6 +19,21 @@ ctrl + alt + s
     shutdown now
 
 #
+# Volume 
+#
+XF86Audio{RaiseVolume,LowerVolume}
+    pulsemixer --change-volume {+,-}5
+XF86AudioMute
+    pulsemixer --toggle-mute
+XF86AudioMicMute
+    amixer set Capture toggle
+#
+# Brightness Control
+#
+XF86MonBrightness{Up,Down}
+    brightnessctl s 10{+,-}
+
+#
 # bspwm hotkeys
 #
 
@@ -104,18 +119,6 @@ super + {shift + b, b}
 # Thunar
 super + f
     thunar
-
-#
-# Volume 
-#
-XF86Audio{RaiseVolume,LowerVolume}
-    pulsemixer --change-volume {+,-}5
-XF86AudioMute
-    pulsemixer --toggle-mute
-XF86AudioMicMute
-    amixer set Capture toggle
-#
-# Brightness Control
-#
-XF86MonBrightness{Up,Down}
-    brightnessctl s 10{+,-}
+# btop
+ctrl + shift + Escape
+    kitty --hold btop
