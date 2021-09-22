@@ -113,7 +113,7 @@ super + s
     maim -s -u | xclip -selection clipboard -t image/png -i
 
 # browser 
-super + {shift + b, b}
+super + {b, shift + b}
     {min, google-chrome-stable}
 
 # Thunar
