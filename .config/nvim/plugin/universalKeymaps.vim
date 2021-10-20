@@ -4,6 +4,12 @@
 
 " Sane Settings
 
+" fixing movement keys
+nnoremap j gj
+nnoremap gj j
+nnoremap k gk
+nnoremap gk k
+
 " fixing cap Y
 nnoremap Y y$
 
@@ -36,7 +42,7 @@ function! s:check_back_space() abort
 endfunction
 
 nmap <leader>gd <Plug>(coc-definitions)
-nmap <leader>gd <Plug>(coc-references)
+nmap <leader>gr <Plug>(coc-references)
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -44,16 +50,8 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Markdown
-map <leader>md :MarkdownPreview<CR>
-
-" latex
-nnoremap <leader>lx :w <bar> :!pdflatex %<CR><CR> <bar> :!biber %:r<CR> <bar> :!pdflatex %<CR>
-nnoremap <leader>lxp :!zathura %:r.pdf &<CR><CR>
-
 " Others
 nnoremap <leader>g :Goyo<CR>
 nnoremap <C-p> :GFiles<CR>
-nnoremap <C-b> :Buffers<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 

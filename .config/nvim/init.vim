@@ -13,11 +13,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 
 "Markdown 
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'vimwiki/vimwiki'
 
 " Flutter
 Plug 'natebosch/dartlang-snippet'
+
+" IPython/Jupyter
 
 " Nerd Tree
 Plug 'preservim/nerdtree'
@@ -33,12 +34,6 @@ Plug 'luochen1990/rainbow'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
-
-"
-" Spell Checks for certain files
-"
-autocmd FileType tex,latex,md,markdown setlocal spell spelllang=en_gb,de_de
-autocmd FileType tex,latex,md,markdown setlocal wrap linebreak
 
 "
 " Colour
