@@ -13,7 +13,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch the bar
 polybar -q main -c "$DIR"/config.ini &
 
-my_laptop_external_monitor=$(xrandr --query | grep 'DisplayPort-0')
+my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-A-0')
 echo $my_laptop_external_monitor
 if [[ $my_laptop_external_monitor != *disconnected* ]]; then
     .screenlayout/dual_display.sh
