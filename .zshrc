@@ -2,6 +2,9 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep bspwm || startx
 fi
 
+# display neofetch 
+neofetch
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,6 +19,7 @@ export ZSH="/home/jkt/.oh-my-zsh"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CHROME_EXECUTABLE=google-chrome-stable
 export ANDROID_HOME=$HOME/Android/Sdk 
+export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 
 path+=('/home/jkt/Development/flutter/bin')
 
@@ -50,9 +54,11 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 
 alias nv="nvim"
+alias nb="jupyter lab"
 alias c="clear"
-alias ani="$HOME/.local/bin/anime"
+alias ani="$HOME/ani-cli/ani-cli"
 alias emulator="Android/Sdk/emulator/emulator"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
