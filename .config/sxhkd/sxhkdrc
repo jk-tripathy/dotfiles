@@ -116,3 +116,7 @@ ctrl + shift + Escape
 # rofi beats
 super + m
    ~/Rofi-Beats/rofi-beats &
+
+# bluemail
+super + e
+    bluemail
