@@ -120,3 +120,11 @@ super + m
 # bluemail
 super + e
     bluemail
+
+# maim printscreen
+super + Print
+    maim ~/Pictures/screenshots/$(date "+%d-%m-%Y_%T").png 
+
+# maim current window ss
+super + shift + Print
+    maim -i $(xdotool getactivewindow) ~/Pictures/screenshots/$(date "+%d-%m-%Y_%T").png 
