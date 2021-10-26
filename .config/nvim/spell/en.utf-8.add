@@ -29,3 +29,8 @@ FSRCNN
 SRGAN
 CARN
 ResNet
+SRResNet
+deblurring
+hyperparameters
+PSNR
+DIV2k
