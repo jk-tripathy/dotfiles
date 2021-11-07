@@ -22,6 +22,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
 
 path+=('/home/jkt/Development/flutter/bin')
+path+=('/usr/bin/clingo')
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

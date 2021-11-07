@@ -54,4 +54,3 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <leader>g :Goyo<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-

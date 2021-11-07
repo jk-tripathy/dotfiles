@@ -15,10 +15,8 @@ polybar -q main -c "$DIR"/config.ini &
 
 my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-A-0')
 echo $my_laptop_external_monitor
-if [[ $my_laptop_external_monitor != *disconnected* ]]; then
-    .screenlayout/dual_display.sh
-    # launch external screen polybar
+if [[ $my_laptop_external_monitor == *1920x1080+1920+0* ]]; then
     polybar -q main -c "$DIR"/config2.ini &
 fi
-
+# polybar -q main -c "$DIR"/config2.ini &
 

@@ -14,6 +14,7 @@ Plug 'junegunn/goyo.vim'
 
 "Markdown 
 Plug 'vimwiki/vimwiki'
+Plug 'iamcco/markdown-preview.nvim'
 
 " Flutter
 Plug 'natebosch/dartlang-snippet'
