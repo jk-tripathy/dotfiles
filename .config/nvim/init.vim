@@ -11,13 +11,19 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter' 
 Plug 'junegunn/goyo.vim'
+Plug 'Yggdroot/indentLine'
+
+" Snips
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'natebosch/dartlang-snippets'
 
 "Markdown 
 Plug 'vimwiki/vimwiki'
 Plug 'iamcco/markdown-preview.nvim'
 
-" Flutter
-Plug 'natebosch/dartlang-snippet'
+" Dart
+Plug 'dart-lang/dart-vim-plugin'
 
 " IPython/Jupyter
 

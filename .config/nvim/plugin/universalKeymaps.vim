@@ -31,6 +31,9 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
+" brackets
+inoremap { {<CR>}<Esc>ko
+
 " COC
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
@@ -49,6 +52,57 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <c-space> coc#refresh()
+
+imap <tab> <Plug>(coc-snippets-expand)
+let g:UltiSnipsExpandTrigger = '<Nop>'
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" COC LSPs
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-flutter',
+  \ 'coc-snippets',
+  \ 'coc-yaml',
+  \ 'coc-css',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ ]
+let g:dart_format_on_save = 1
+let g:dartfmt_options = ['--fix', '--line-length 120']
 
 " Others
 nnoremap <leader>g :Goyo<CR>
