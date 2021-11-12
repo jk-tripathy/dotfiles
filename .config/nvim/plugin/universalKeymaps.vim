@@ -101,9 +101,6 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-json',
   \ ]
-let g:dart_format_on_save = 1
-let g:dartfmt_options = ['--fix', '--line-length 120']
-
 " Others
 nnoremap <leader>g :Goyo<CR>
 nnoremap <C-p> :GFiles<CR>

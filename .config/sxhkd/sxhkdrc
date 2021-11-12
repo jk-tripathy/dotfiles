@@ -137,6 +137,6 @@ super + Print
 super + shift + Print
     maim -i $(xdotool getactivewindow) ~/Pictures/screenshots/$(date "+%d-%m-%Y_%T").png 
 
-# adb 
-super + a
-    kitty nohup scrcpy -m 1080 --shortcut-mod=lctrl & disown; exit 
+# notion    
+super + n 
+    todoist-nativefier

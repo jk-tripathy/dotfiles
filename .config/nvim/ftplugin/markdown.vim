@@ -5,7 +5,7 @@ setlocal wrap linebreak
 nnoremap <leader>dt :pu!=strftime('%a %d %b %Y')<CR> <bar> :norm I# <CR>
 
 " Compiling 
-nnoremap <leader>c :w <bar> :!pandoc "%" -M geometry:"margin=0.5in" -o "%:r".pdf<CR>
+nnoremap <leader>c :w <bar> :!~/.config/pandocFormatting/md2pdf.sh "%" "%:r".pdf<CR>
 nnoremap <leader>p :!zathura "%:r".pdf &<CR><CR>
 
 " Bold
