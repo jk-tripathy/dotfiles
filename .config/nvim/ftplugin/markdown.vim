@@ -1,5 +1,7 @@
 setlocal spell spelllang=en_gb,de_de
 setlocal wrap linebreak
+set colorcolumn=""
+let g:indentLine_setConceal = 0
 
 " Insert date
 nnoremap <leader>dt :pu!=strftime('%a %d %b %Y')<CR> <bar> :norm I# <CR>
@@ -17,5 +19,5 @@ inoremap <c-b> **<left>
 xnoremap <C-b> "xc*<C-r>x*<Esc>
 
 " Image Insert
-nnoremap <leader>ss :!maim -s %:p:h/Figures/%:p:t:r_<cword>.png<CR> <bar> 0dwi![<esc>pA]($)<esc>0f$ci(Figures/lecture
+nnoremap <leader>ss :!maim -s %:p:h/Figures/<cword>.png<CR> <bar> 0dwi![<esc>pA]($)<esc>0f$ci(Figures/
 
