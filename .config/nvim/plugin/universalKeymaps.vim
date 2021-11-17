@@ -31,9 +31,6 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-" brackets
-inoremap { {<CR>}<Esc>ko
-
 " COC
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 

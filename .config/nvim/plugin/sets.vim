@@ -28,4 +28,5 @@ set updatetime=100
 set cmdheight=1
 set colorcolumn=80
 set clipboard=unnamedplus
+set cole=0
 
