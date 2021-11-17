@@ -57,7 +57,6 @@ export LANG=en_US.UTF-8
 alias nv="nvim"
 alias nb="jupyter lab"
 alias c="clear"
-alias ani="$HOME/ani-cli/ani-cli"
 alias emulator="Android/Sdk/emulator/emulator"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
