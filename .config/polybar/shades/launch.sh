@@ -19,4 +19,3 @@ if [[ $my_laptop_external_monitor == *1920x1080+1920+0* ]]; then
     polybar -q main -c "$DIR"/config2.ini &
 fi
 # polybar -q main -c "$DIR"/config2.ini &
-
