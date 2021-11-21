@@ -1,8 +1,12 @@
 #!/bin/bash
 
 pandoc "$1" \
+    -f gfm \
+    -f markdown-implicit_figures \
     -H ~/.config/pandocFormatting/bulletStyle.tex \
     -H ~/.config/pandocFormatting/quoteStyle.tex \
+    --toc \
+    -N \
     -V fontsize=11pt \
     -V mainfont="Iosevka" \
     -V monofont="Fira Code" \

@@ -1,5 +1,0 @@
-[0] Config.pm:312> INFO - This is Biber 2.15
-[0] Config.pm:315> INFO - Logfile is 'bulletStyle.blg'
-[49] biber:330> INFO - === Mon Nov 15, 2021, 22:43:26
-[124] Utils.pm:411> ERROR - Cannot find 'bulletStyle.bcf'!
-[125] Biber.pm:132> INFO - ERRORS: 1
