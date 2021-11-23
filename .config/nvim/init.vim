@@ -16,7 +16,6 @@ Plug 'Yggdroot/indentLine'
 " Snips
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'natebosch/dartlang-snippets'
 
 "Markdown 
 Plug 'vimwiki/vimwiki'
@@ -24,6 +23,7 @@ Plug 'iamcco/markdown-preview.nvim'
 
 " Dart
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/dartlang-snippets'
 
 " IPython/Jupyter
 
@@ -35,6 +35,7 @@ Plug 'ryanoasis/vim-devicons'
 " Themes
 Plug 'tomasiser/vim-code-dark'
 Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 
 " Syntax
 Plug 'luochen1990/rainbow'
@@ -45,7 +46,9 @@ call plug#end()
 "
 " Colour
 "
-let g:airline_theme = 'gruvbox'
-colorscheme gruvbox
-let g:rainbow_active = 1 
-
+let g:airline_theme = 'ayu'
+set termguicolors     " enable true colors support
+let ayucolor="mirage" " for mirage version of theme
+colorscheme ayu
+let g:rainbow_active = 1
+let g:indentLine_setColors = 0

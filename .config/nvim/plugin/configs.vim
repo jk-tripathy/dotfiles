@@ -9,3 +9,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vimwiki_list = [{'path': '~/vimwiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" colored indentLine
+let g:indentLine_setColors = 0
+
