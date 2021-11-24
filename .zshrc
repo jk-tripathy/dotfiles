@@ -30,8 +30,6 @@ path+=('/usr/bin/clingo')
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-(cat ~/.cache/wal/sequences &)
-
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=13
 
@@ -61,4 +59,3 @@ alias emulator="Android/Sdk/emulator/emulator"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
