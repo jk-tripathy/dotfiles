@@ -6,9 +6,7 @@
 
 " fixing movement keys
 nnoremap j gj
-nnoremap gj j
 nnoremap k gk
-nnoremap gk k
 
 " fixing cap Y
 nnoremap Y y$
@@ -98,7 +96,13 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-json',
   \ ]
+
 " Others
 nnoremap <leader>g :Goyo<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
+
+" vim figitive
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gj :diffget //3<CR>
