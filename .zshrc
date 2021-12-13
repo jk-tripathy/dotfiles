@@ -2,8 +2,7 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep bspwm || startx
 fi
 
-todoist sync
-todoist --color l --filter '(overdue | today)'
+figlet -c -k -t "GET SHIT DONE"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -56,6 +55,7 @@ alias nv="nvim"
 alias emulator="Android/Sdk/emulator/emulator"
 alias c="code . --enable-proposed-api"
 alias z="zathura --fork"
+alias todo="todoist sync && todoist --color l --filter '(overdue | today)'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

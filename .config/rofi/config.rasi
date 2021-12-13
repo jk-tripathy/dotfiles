@@ -1,4 +1,4 @@
 configuration {
-    theme: "~/.cache/wal/colors-rofi-light.rasi";
     modi: "window,run,ssh,drun,keys";
 }
+@theme "~/.cache/wal/colors-rofi-light.rasi"
