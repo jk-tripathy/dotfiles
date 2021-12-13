@@ -86,6 +86,10 @@ super + {grave,Tab}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# Rotate tree
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
+
 #
 # move/resize
 #
@@ -123,7 +127,7 @@ ctrl + shift + Escape
 
 # rofi beats
 super + m
-   ~/Rofi-Beats/rofi-beats &
+   kitty com.spotify.Client
 
 # bluemail
 super + e
