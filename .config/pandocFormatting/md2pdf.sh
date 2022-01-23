@@ -8,6 +8,9 @@ pandoc "$1" \
     -V mainfont="Iosevka" \
     -V monofont="Fira Code" \
     -V geometry:margin=2cm \
+    -V breaklines="true" \
+    -V breakatwhitespace="true" \
+    -V breakautoindent="true" \
     --pdf-engine=xelatex \
     -o "$2"
 

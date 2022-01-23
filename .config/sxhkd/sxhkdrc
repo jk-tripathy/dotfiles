@@ -127,7 +127,7 @@ ctrl + shift + Escape
 
 # rofi beats
 super + m
-   kitty com.spotify.Client
+   kitty --hold com.spotify.Client &
 
 # bluemail
 super + e

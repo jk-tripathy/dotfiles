@@ -1,3 +1,5 @@
+set selection-clipboard clipboard
+
 set notification-error-bg       "#212733"
 set notification-error-fg       "#fb4934"
 set notification-warning-bg     "#212733"

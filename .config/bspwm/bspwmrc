@@ -3,6 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 .config/polybar/shades/launch-focus.sh &
+killall picom &
 
 my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-A-0')                 
 if [[ $my_laptop_external_monitor == *1920x1080+1920+0* ]]; 

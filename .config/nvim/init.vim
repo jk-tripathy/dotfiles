@@ -20,6 +20,9 @@ Plug 'honza/vim-snippets'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'natebosch/dartlang-snippets'
 
+" Clingo
+Plug 'rkaminsk/vim-syntax-clingo'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' 
@@ -37,6 +40,9 @@ Plug 'ayu-theme/ayu-vim'
 " Syntax
 Plug 'luochen1990/rainbow'
 Plug 'plasticboy/vim-markdown'
+
+" Grammar
+Plug 'rhysd/vim-grammarous'
 
 call plug#end()
 
