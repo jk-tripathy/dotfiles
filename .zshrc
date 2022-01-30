@@ -53,9 +53,8 @@ export LANG=en_US.UTF-8
 
 alias nv="nvim"
 alias emulator="Android/Sdk/emulator/emulator"
-alias c="code . --enable-proposed-api"
+alias jn="jupyter-notebook"
 alias z="zathura --fork"
-alias todo="todoist sync && todoist --color l --filter '(overdue | today)'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
