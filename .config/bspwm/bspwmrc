@@ -2,8 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-.config/polybar/shades/launch-focus.sh &
-killall picom &
+.config/polybar/shades/launch.sh &
 
 my_laptop_external_monitor=$(xrandr --query | grep 'HDMI-A-0')                 
 if [[ $my_laptop_external_monitor == *1920x1080+1920+0* ]]; 
@@ -13,8 +12,8 @@ then
 else
     bspc monitor eDP -d I II III IV V
 fi     
-bspc config border_width         0
-bspc config window_gap           0
+bspc config border_width         2
+bspc config window_gap          12
 
 # Colors
 . "${HOME}/.cache/wal/colors.sh"

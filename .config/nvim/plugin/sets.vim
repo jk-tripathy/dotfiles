@@ -10,7 +10,7 @@ set encoding=UTF-8
 set expandtab
 set wildmenu
 set number
-set relativenumber
+set nornu
 set autoread
 set shiftwidth=4
 set tabstop=4
