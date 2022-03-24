@@ -27,3 +27,4 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a scrcpy state=floating rectangle=600x360+660+700
+bspc config external_rules_command "$HOME/.config/bspwm/spotify.sh"
