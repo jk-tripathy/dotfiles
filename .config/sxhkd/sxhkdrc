@@ -125,10 +125,6 @@ super + f
 ctrl + shift + Escape
     kitty --hold btop
 
-# rofi beats
-super + m
-   kitty --hold com.spotify.Client &
-
 # bluemail
 super + e
     bluemail
