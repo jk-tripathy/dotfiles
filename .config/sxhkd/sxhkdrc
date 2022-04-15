@@ -55,7 +55,7 @@ super + shift + m
 
 # lock computer
 ctrl + alt + l
-    ./betterlockscreen-master/betterlockscreen -l dimpixel
+    betterlockscreen -l pixel
 
 
 #
@@ -114,8 +114,8 @@ super + s
     maim -s -u | xclip -selection clipboard -t image/png -i
 
 # browser 
-super + {b, shift + b}
-    {google-chrome-stable, min}
+super + b
+    vivaldi-stable
 
 # Thunar
 super + f
