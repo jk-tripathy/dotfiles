@@ -115,7 +115,7 @@ super + s
 
 # browser 
 super + b
-    vivaldi-stable
+    google-chrome-stable
 
 # Thunar
 super + f
