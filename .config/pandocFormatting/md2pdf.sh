@@ -4,7 +4,7 @@ pandoc "$1" \
     -f markdown-implicit_figures \
     -H ~/.config/pandocFormatting/bulletStyle.tex \
     -H ~/.config/pandocFormatting/quoteStyle.tex \
-    -V fontsize=11pt \
+    -V fontsize=12pt \
     -V mainfont="Iosevka" \
     -V monofont="Fira Code" \
     -V geometry:margin=2cm \

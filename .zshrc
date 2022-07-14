@@ -2,7 +2,7 @@ if [[ "$(tty)" = "/dev/tty1" ]]; then
 	pgrep bspwm || startx
 fi
 
-figlet -c -k -t "GET SHIT DONE"
+# figlet -c -k -t "GET SHIT DONE"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -19,6 +19,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export CHROME_EXECUTABLE=google-chrome-stable
 export ANDROID_HOME=$HOME/Android/Sdk 
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/bannies4-35d59d063177.json
 
 path+=('/home/jkt/Development/flutter/bin')
 path+=('/usr/bin/clingo')

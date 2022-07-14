@@ -31,6 +31,18 @@ XF86AudioMute
     pulsemixer --toggle-mute
 XF86AudioMicMute
     amixer set Capture toggle
+
+#
+# Player Controls
+#
+F9
+    playerctl previous
+F10
+    playerctl play
+F11
+    playerctl pause
+F12
+    playerctl next
 #
 # Brightness Control
 #
@@ -42,8 +54,8 @@ XF86MonBrightness{Up,Down}
 #
 
 # quit/restart bspwm
-super + {w,r}
-	bspc {quit,wm -r}
+super + r
+	bspc wm -r
 
 # close and kill
 super + {_,shift + }q
