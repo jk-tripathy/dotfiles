@@ -1,4 +1,4 @@
 configuration {
     modi: "window,run,ssh,drun,keys";
 }
-@theme "~/.cache/wal/colors-rofi-light.rasi"
+@theme "themes/dracula.rasi"

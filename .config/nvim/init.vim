@@ -12,14 +12,14 @@ Plug 'Yggdroot/indentLine'
 Plug 'tomasiser/vim-code-dark'
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
+Plug 'dracula/vim', { 'name': 'dracula' }
 
 call plug#end()
 
 "
 " Colour
 "
-let g:airline_theme = 'ayu'
+let g:airline_theme = 'dracula'
 set termguicolors     " enable true colors support
-let ayucolor="mirage" " for mirage version of theme
-colorscheme ayu
+colorscheme dracula
 let g:indentLine_setColors = 0

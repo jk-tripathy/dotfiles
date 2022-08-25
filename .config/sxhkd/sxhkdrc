@@ -150,5 +150,5 @@ super + shift + Print
     maim -i $(xdotool getactivewindow) ~/Pictures/screenshots/$(date "+%d-%m-%Y_%T").png 
 
 # notion    
-super + n 
-    todoist-nativefier
+super + c
+    code
