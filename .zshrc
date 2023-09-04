@@ -1,61 +1,47 @@
-if [[ "$(tty)" = "/dev/tty1" ]]; then   
-	pgrep bspwm || startx
-fi
+export GPG_TTY=$(tty) 
 
-# figlet -c -k -t "GET SHIT DONE"
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export CHROME_EXECUTABLE='google-chrome-stable'
+export TOKENIZERS_PARALLELISM=false
 
-export ZSH="/home/jkt/.oh-my-zsh"
-export _JAVA_AWT_WM_NONREPARENTING=1
-export CHROME_EXECUTABLE=google-chrome-stable
-export ANDROID_HOME=$HOME/Android/Sdk 
-export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
-export GOOGLE_APPLICATION_CREDENTIALS=$HOME/bannies4-35d59d063177.json
+export ZSH="$HOME/.oh-my-zsh"
+path+=("$HOME/flutter/bin/")
+export path
 
-path+=('/home/jkt/Development/flutter/bin')
-path+=('/usr/bin/clingo')
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="true"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting virtualenv)
+plugins=(
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.pyenvs/base/bin/activate
+source ~/work.sh
 
-# User configuration
-export EDITOR=nvim
-# export MANPATH="/usr/local/man:$MANPATH"
+env () {
+    if [[ $1 == "-l" ]]
+    then
+        ls ~/.pyenvs/
+    else
+        source ~/.pyenvs/$1/bin/activate
+    fi
+}
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
+# aliases
 alias nv="nvim"
-alias emulator="Android/Sdk/emulator/emulator"
-alias jn="jupyter-notebook"
-alias z="zathura --fork"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+alias cisco="/opt/cisco/anyconnect/bin/vpn"
+alias vc="cisco -s < ~/.cisco_creds connect sslvpn.uni-potsdam.de"
+alias vd="cisco disconnect"
+alias vs="cisco status"
+
+alias yeet="~/yeet.sh"
+alias yoink="~/yoink.sh"
+
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
