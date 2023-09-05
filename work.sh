@@ -11,9 +11,9 @@ work () {
         then
             source ~/.pyenvs/$projname/bin/activate
         else
-            echo "No pyenv found"
             if [[ $2 == "-v" ]]
             then 
+                echo "No pyenv found"
                 echo "Creating pyenv"
                 if [[ $# -eq 3 ]]
                 then
