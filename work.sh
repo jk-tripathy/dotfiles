@@ -10,6 +10,7 @@ work () {
         if [[ -d ~/.pyenvs/$projname ]]
         then
             source ~/.pyenvs/$projname/bin/activate
+            echo "Activated pyenv"
         else
             if [[ $2 == "-v" ]]
             then 
