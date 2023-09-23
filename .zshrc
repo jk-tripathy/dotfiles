@@ -20,7 +20,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.pyenvs/base/bin/activate
+# source ~/.pyenvs/base/bin/activate
 
 source ~/.config/work.sh
 source ~/.config/yeet.sh
