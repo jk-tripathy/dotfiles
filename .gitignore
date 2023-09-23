@@ -3,5 +3,8 @@ google-chrome/
 gtk-3.0/
 menus/
 pulse/
+solaar/
+xfce4/
 .p10k*
 .zcompdump*
+pavucontrol.ini
