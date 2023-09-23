@@ -3,3 +3,5 @@ google-chrome/
 gtk-3.0/
 menus/
 pulse/
+.p10k*
+.zcompdump*
