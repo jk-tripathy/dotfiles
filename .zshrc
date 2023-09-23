@@ -21,7 +21,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source ~/.pyenvs/base/bin/activate
-source ~/work.sh
+
+source ~/.config/work.sh
+source ~/.config/yeet.sh
+source ~/.config/yoink.sh
 
 env () {
     if [[ $1 == "-l" ]]
@@ -34,14 +37,3 @@ env () {
 
 # aliases
 alias nv="nvim"
-
-alias cisco="/opt/cisco/anyconnect/bin/vpn"
-alias vc="cisco -s < ~/.cisco_creds connect sslvpn.uni-potsdam.de"
-alias vd="cisco disconnect"
-alias vs="cisco status"
-
-alias yeet="~/yeet.sh"
-alias yoink="~/yoink.sh"
-
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

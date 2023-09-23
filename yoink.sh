@@ -1,7 +1,11 @@
-dirname="${PWD/\/home\/jkt\///}"
-projname=$(cut -d'/' -f2 <<<"$dirname")
-subdir=$(cut -d'/' -f3- <<<"$dirname")
-rsync -avuzhL --exclude models --exclude=*.ckpt dfki:$projname/ ~/$projname/
+#!/bin/sh
+
+yoink () {
+    dirname="${PWD/\/home\/jkt\///}"
+    projname=$(cut -d'/' -f2 <<<"$dirname")
+    subdir=$(cut -d'/' -f3- <<<"$dirname")
+    rsync -avuzhL --exclude models --exclude=*.ckpt dfki:$projname/ ~/$projname/
+}
 # if [ "$1" == "-v" ]
 # then
 #     ssh im "cd project/$projname; export PYTHONPATH=.:$PYTHONPATH; venv/bin/python ./$subdir/$2; exit"
