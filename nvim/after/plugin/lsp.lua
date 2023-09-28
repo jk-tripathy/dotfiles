@@ -12,7 +12,7 @@ lsp.configure('pylsp', {
         pylsp = {
             plugins = {
                 pycodestyle = {
-                    ignore = {'E501','E402','E501', 'F403', 'F401','E203','W503'},
+                    ignore = {'E501','F401','F841','W503','E203','W504'},
                 }
             }
         }
@@ -22,13 +22,24 @@ lsp.configure('pylsp', {
 lsp.format_on_save({
   format_opts = {
     async = false,
-    timeout_ms = 10000,
+    timeout_ms = 1000,
   },
   servers = {
-    ['pylsp'] = {'python'},
     ['dartls'] = {'dart'},
     ['lua-language-server'] = {'lua'},
   }
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+    pattern = { "*.py" },
+    desc = "Auto-format Python files after saving",
+    callback = function()
+        local fileName = vim.api.nvim_buf_get_name(0)
+        vim.cmd(":silent !black --line-length 99 " .. fileName)
+        vim.cmd(":silent !isort --profile black --filter-files " .. fileName)
+        vim.cmd(":silent !docformatter --in-place --wrap-summaries=99 --wrap-descriptions=99 " .. fileName)
+    end,
+    group = autocmd_group,
 })
 
 local cmp = require('cmp')
@@ -37,7 +48,7 @@ local cmp_format = lsp.cmp_format()
 cmp.setup({
   formatting = cmp_format,
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
