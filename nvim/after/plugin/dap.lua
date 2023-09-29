@@ -1,5 +1,5 @@
 require('dapui').setup()
-require('dap-python').setup('~/.pyenvs/debugger/bin/python')
+require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
 require('dap-python').test_runner = 'pytest'
 
 vim.keymap.set('n', '<leader>dt', function() require('dapui').toggle() end)

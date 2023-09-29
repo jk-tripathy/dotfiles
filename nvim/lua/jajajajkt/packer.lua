@@ -68,6 +68,9 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- FORMATTER 
+    use('mhartington/formatter.nvim')
+
     -- GIT
     use{'tpope/vim-fugitive'}
     use{'airblade/vim-gitgutter'}
