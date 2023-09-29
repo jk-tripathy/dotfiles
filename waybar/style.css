@@ -141,7 +141,7 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 0px 0px 0px 0px;
     margin-right: 0;
     border-left: 0px;
 }
