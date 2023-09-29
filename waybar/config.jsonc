@@ -5,10 +5,11 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 50,
+    "height": 40,
     "modules-left": ["clock","hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["network","battery","backlight","pulseaudio","pulseaudio#microphone","tray"],
+    "modules-right": ["battery","backlight","pulseaudio","pulseaudio#microphone","network", "tray"],
+
     "hyprland/window": {
         "format": "{}",
         "rewrite": {
@@ -37,7 +38,7 @@
     "network": {
         "format": "{icon} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
         "interval": 2,
-        "min-length": 22,
+        "min-length": 23,
     },
 
     "tray": {
@@ -101,7 +102,7 @@
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
     },
-    
+
     "bluetooth": {
 	    "format": " {status}",
 	    "format-disabled": "", // an empty format will hide the module

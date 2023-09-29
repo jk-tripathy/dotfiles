@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "Iosevka";
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     min-height: 0;
 }
 
@@ -114,16 +114,16 @@ tooltip {
 
 #network {
     color: #f9e2af;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 10px 10px 10px;
     border-left: 0px;
-    border-right: 0px;
+    margin-right: 10px;
 }
 
 #bluetooth {
     color: #89b4fa;
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px
-} 
+}
 
 #pulseaudio {
     color: #89b4fa;
@@ -141,7 +141,7 @@ tooltip {
 
 #battery {
     color: #a6e3a1;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 10px 0px 0px 10px;
     margin-right: 0;
     border-left: 0px;
 }
