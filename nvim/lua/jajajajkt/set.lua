@@ -1,5 +1,5 @@
 vim.opt.nu = true
-vim.opt.relativenumber = false 
+vim.opt.relativenumber = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -27,3 +27,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "99"
+
+vim.opt.clipboard = "unnamedplus"

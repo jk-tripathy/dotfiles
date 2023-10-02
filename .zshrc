@@ -8,6 +8,8 @@ export CHROME_EXECUTABLE='google-chrome-stable'
 export TOKENIZERS_PARALLELISM=false
 
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR=nvim
+
 path+=("$HOME/flutter/bin/")
 export path
 
