@@ -29,15 +29,6 @@ source ~/.config/scripts/yeet.sh
 source ~/.config/scripts/yoink.sh
 source ~/.config/scripts/GHPbuild.sh
 
-env () {
-    if [[ $1 == "-l" ]]
-    then
-        ls ~/.pyenvs/
-    else
-        source ~/.pyenvs/$1/bin/activate
-    fi
-}
-
 # aliases
 alias nv="nvim"
 alias w="work"
