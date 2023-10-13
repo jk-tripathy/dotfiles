@@ -1,10 +1,8 @@
 #!/bin/sh
 
 yoink () {
-    dirname="${PWD/\/home\/jkt\///}"
-    projname=$(cut -d'/' -f2 <<<"$dirname")
-    subdir=$(cut -d'/' -f3- <<<"$dirname")
-    rsync -avuzhL --exclude models --exclude=*.ckpt dfki:$projname/ ~/$projname/
+    projname="${PWD/\/home\/jkt\/Projects\//}"
+    rsync -avuzhL --exclude models --exclude logs dfki:$projname/ ~/Projects/$projname/
 }
 # if [ "$1" == "-v" ]
 # then
@@ -12,5 +10,3 @@ yoink () {
 # else
 #     ssh im "cd project/$projname; export PYTHONPATH=.:$PYTHONPATH; python3 .$subdir/$1; exit"
 # fi
-        
-

@@ -1,10 +1,8 @@
 #!/bin/sh
 
 yeet () {
-    dirname="${PWD/\/home\/jkt\///}"
-    projname=$(cut -d'/' -f2 <<<"$dirname")
-    subdir=$(cut -d'/' -f3- <<<"$dirname")
-    rsync -avuzh --exclude logs ~/$projname/ dfki:$projname/
+    projname="${PWD/\/home\/jkt\/Projects\//}"
+    rsync -avuzh --exclude logs --exclude models ~/Projects/$projname/ dfki:$projname/
 }
 
 # if [ "$1" == "-v" ]
@@ -13,5 +11,3 @@ yeet () {
 # else
 #     ssh im "cd project/$projname; export PYTHONPATH=.:$PYTHONPATH; python3 .$subdir/$1; exit"
 # fi
-        
-
