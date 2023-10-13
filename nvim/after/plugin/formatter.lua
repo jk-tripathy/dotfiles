@@ -11,8 +11,6 @@ require("formatter").setup({
 						"--search-parent-directories",
 						"--stdin-filepath",
 						fileName,
-						"--",
-						"-",
 					},
 					stdin = true,
 				}
@@ -55,9 +53,9 @@ require("formatter").setup({
 	},
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+vim.api.nvim_create_autocmd({ "BufWrite" }, {
 	pattern = { "*" },
-	desc = "Auto-format Python files after saving",
+	desc = "Auto-format files before writing",
 	callback = function()
 		vim.cmd(":FormatWrite")
 	end,

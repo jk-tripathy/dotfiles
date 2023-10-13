@@ -8,7 +8,7 @@
     "height": 40,
     "modules-left": ["clock","hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["battery","backlight","pulseaudio","pulseaudio#microphone","network", "tray"],
+    "modules-right": ["network","battery","backlight","pulseaudio","pulseaudio#microphone", "tray"],
 
     "hyprland/window": {
         "format": "{}",
@@ -43,7 +43,7 @@
 
     "tray": {
         "icon-size": 18,
-        "spacing": 10
+        "spacing": 5
     },
 
     "clock": {
