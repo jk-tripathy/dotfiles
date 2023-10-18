@@ -1,16 +1,16 @@
-export GPG_TTY=$(tty) 
+export GPG_TTY=$(tty)
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export CHROME_EXECUTABLE='google-chrome-stable'
+export CHROME_EXECUTABLE='google-chrome-beta'
 export TOKENIZERS_PARALLELISM=false
 
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
-path+=("$HOME/flutter/bin/")
+path+=("/opt/flutter/bin")
 export path
 
 ZSH_THEME="powerlevel10k/powerlevel10k"

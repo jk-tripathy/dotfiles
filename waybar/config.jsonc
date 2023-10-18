@@ -6,9 +6,9 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 40,
-    "modules-left": ["clock","hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["network","battery","backlight","pulseaudio","pulseaudio#microphone", "tray"],
+    "modules-left": ["clock", "network"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["battery","pulseaudio","pulseaudio#microphone","backlight","tray"],
 
     "hyprland/window": {
         "format": "{}",
