@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/jkt/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  flexoki = {
-    loaded = true,
-    path = "/home/jkt/.local/share/nvim/site/pack/packer/start/flexoki",
-    url = "https://github.com/stevedylandev/flexoki-nvim"
-  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "/home/jkt/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",

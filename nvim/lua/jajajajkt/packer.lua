@@ -31,7 +31,6 @@ return require("packer").startup(function(use)
 		as = "rose-pine",
 	})
 	use({ "catppuccin/nvim", as = "catppuccin" })
-    use({ 'stevedylandev/flexoki-nvim', as = 'flexoki' })
 
 	-- DEBUGGER
 	use({

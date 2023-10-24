@@ -11,6 +11,8 @@ require("formatter").setup({
 						"--search-parent-directories",
 						"--stdin-filepath",
 						fileName,
+						"--",
+						"-",
 					},
 					stdin = true,
 				}
@@ -46,16 +48,10 @@ require("formatter").setup({
 				}
 			end,
 		},
-
-		["*"] = {
-			require("formatter.filetypes.any").remove_trailing_whitespace,
-		},
 	},
 })
 
-vim.api.nvim_create_autocmd({ "BufWrite" }, {
-	pattern = { "*" },
-	desc = "Auto-format files before writing",
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	callback = function()
 		vim.cmd(":FormatWrite")
 	end,
