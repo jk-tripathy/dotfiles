@@ -43,10 +43,25 @@ require("formatter").setup({
 				local fileName = vim.api.nvim_buf_get_name(0)
 				return {
 					exe = "~/.local/share/nvim/mason/packages/isort/venv/bin/isort",
-					args = { "--profile", "black", "--filter-files", fileName },
+					args = { "--profile black", "--filter-files", fileName },
+				}
+			end,
+		},
+		markdown = {
+			function()
+				local fileName = vim.api.nvim_buf_get_name(0)
+				return {
+					exe = "~/.local/share/nvim/mason/packages/mdformat/venv/bin/mdformat",
+					args = {
+						"--number",
+						fileName,
+					},
 					stdin = true,
 				}
 			end,
+		},
+		["*"] = {
+			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},
 	},
 })
