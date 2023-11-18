@@ -23,6 +23,10 @@ local cmp = require("cmp")
 local cmp_format = lsp.cmp_format()
 
 cmp.setup({
+	sources = {
+		{ name = "path" },
+		{ name = "nvim_lsp" },
+	},
 	formatting = cmp_format,
 	mapping = cmp.mapping.preset.insert({
 		["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
@@ -37,7 +41,7 @@ cmp.setup({
 })
 
 lsp.set_preferences({
-	suggest_lsp_servers = false,
+	suggest_lsp_servers = true,
 	sign_icons = {
 		error = "E",
 		warn = "W",
@@ -55,7 +59,8 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
-lsp.setup()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+lsp.setup({ capabilites = capabilites })
 
 vim.diagnostic.config({
 	virtual_text = true,
