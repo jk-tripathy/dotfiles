@@ -11,21 +11,21 @@ local plugins = {
 
 	-- COLORS
 	{ "rose-pine/neovim", name = "rose-pine" },
-	{ "catppuccin/nvim", name = "catppuccin" },
-	{ "letorbi/vim-colors-modern-borland" },
+	-- { "catppuccin/nvim", name = "catppuccin" },
 
 	-- DEBUGGER
-	"mfussenegger/nvim-dap",
 	{
-		"rcarriga/nvim-dap-ui",
+		"mfussenegger/nvim-dap",
 		dependencies = {
+			"rcarriga/nvim-dap-ui",
 			"mfussenegger/nvim-dap",
 			"ChristianChiarulli/neovim-codicons",
+			lazy = true,
 		},
 	},
 
 	-- PYTHON DAP
-	"mfussenegger/nvim-dap-python",
+	{ "mfussenegger/nvim-dap-python", lazy = true },
 
 	-- LSP
 	{
@@ -35,10 +35,12 @@ local plugins = {
 			"neovim/nvim-lspconfig",
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			-- Autocompletion
 			"hrsh7th/nvim-cmp",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
 		},
 	},
@@ -47,7 +49,7 @@ local plugins = {
 	"github/copilot.vim",
 
 	-- FORMATTER
-	"mhartington/formatter.nvim",
+	"stevearc/conform.nvim",
 
 	-- GIT
 	"tpope/vim-fugitive",
@@ -59,6 +61,7 @@ local plugins = {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
+		lazy = "VeryLazy",
 	},
 }
 

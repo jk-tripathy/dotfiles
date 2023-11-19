@@ -3,8 +3,18 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 require("mason").setup({})
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "pylsp" },
+require("mason-lspconfig").setup({})
+require("mason-tool-installer").setup({
+	ensure_installed = {
+		"pylsp",
+		"lua_ls",
+		"black",
+		"isort",
+		"stylua",
+		"codespell",
+		"mdformat",
+		"debugpy",
+	},
 })
 
 lsp.configure("pylsp", {
@@ -25,6 +35,7 @@ local cmp_format = lsp.cmp_format()
 cmp.setup({
 	sources = {
 		{ name = "path" },
+		{ name = "buffer" },
 		{ name = "nvim_lsp" },
 	},
 	formatting = cmp_format,
@@ -60,7 +71,7 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-lsp.setup({ capabilites = capabilites })
+lsp.setup({ capabilities = capabilities })
 
 vim.diagnostic.config({
 	virtual_text = true,
