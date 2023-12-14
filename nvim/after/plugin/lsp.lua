@@ -34,9 +34,9 @@ local cmp_format = lsp.cmp_format()
 
 cmp.setup({
 	sources = {
+		{ name = "nvim_lsp" },
 		{ name = "path" },
 		{ name = "buffer" },
-		{ name = "nvim_lsp" },
 	},
 	formatting = cmp_format,
 	mapping = cmp.mapping.preset.insert({
