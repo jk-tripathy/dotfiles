@@ -3,7 +3,7 @@
 work () {
     if [[ $1 == "-l" ]]
     then
-        ls ~/projects/ 
+        ls ~/Projects/ 
     else
         cd $1
         projname=${PWD##*/}
