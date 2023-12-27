@@ -1,11 +1,19 @@
 #!/bin/sh
 
+_work_comp() {
+    local cur
+    local files
+    files=$(ls ~/Projects)
+    COMPREPLY=( $(compgen -W "${files}" -- "${cur}") )
+}
+complete -F _work_comp work
+
 work () {
     if [[ $1 == "-l" ]]
     then
         ls ~/Projects/ 
     else
-        cd $1
+        cd ~/Projects/$1
         projname=${PWD##*/}
         if [[ -d ~/.pyenvs/$projname ]]
         then
