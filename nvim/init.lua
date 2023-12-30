@@ -9,26 +9,28 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 local plugins = {
-	spec = {
-	import = "plugins",
-	},
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "gzip",
-        "matchit",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-        "man",
-      },
+    spec = {
+        import = "plugins",
     },
-  },
+    defaults = { lazy = true },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "filetype",
+                "gzip",
+                "matchit",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+                "man",
+                "shada",
+                "spellfile",
+            },
+        },
+    },
 }
 
 local opts = {}
 
-
 require("lazy").setup(plugins, opts)
-

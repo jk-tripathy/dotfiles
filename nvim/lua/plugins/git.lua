@@ -35,7 +35,7 @@ local M = {
             })
         end,
     },
-    { "airblade/vim-gitgutter" },
+    { "airblade/vim-gitgutter", lazy = false },
 }
 
 return M
