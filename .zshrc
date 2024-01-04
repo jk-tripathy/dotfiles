@@ -7,9 +7,6 @@ fi
 export CHROME_EXECUTABLE='google-chrome-beta'
 export TOKENIZERS_PARALLELISM=false
 
-export VIMINIT='source $MYVIMRC'
-export MYVIMRC="$HOME/.config/vim/.vimrc"
-
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 

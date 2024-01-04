@@ -17,7 +17,7 @@ set colorcolumn="99"
 set clipboard="unnamedplus"
 
 let mapleader=" "
-nnoremap <leader>p :Ex<CR>
+nnoremap <leader>e :Ex<CR>
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
