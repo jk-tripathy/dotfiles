@@ -18,6 +18,8 @@ set clipboard="unnamedplus"
 
 let mapleader=" "
 nnoremap <leader>e :Ex<CR>
+nnoremap e $
+nnoremap b 0
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
