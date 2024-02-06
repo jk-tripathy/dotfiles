@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
-vim.keymap.set("n", "e", "$")
-vim.keymap.set("n", "b", "0")
+vim.keymap.set("n", "E", "$")
+vim.keymap.set("n", "B", "0w")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -19,3 +19,6 @@ vim.keymap.set("n", "<M-t>", "<C-w>T")
 
 vim.keymap.set("n", "<M-->", ":Hex!<CR>")
 vim.keymap.set("n", "<M-=>", ":Vex!<CR>")
+
+vim.keymap.set("n", "zo", "zO")
+vim.keymap.set("n", "zc", "zc")

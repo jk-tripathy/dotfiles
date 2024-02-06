@@ -15,6 +15,7 @@ set signcolumn="yes"
 set updatetime=50
 set colorcolumn="99"
 set clipboard="unnamedplus"
+set foldmethod=indent
 
 let mapleader=" "
 nnoremap <leader>e :Ex<CR>
@@ -33,3 +34,5 @@ noremap <C-j> `J
 noremap <C-k> `K
 noremap <C-l> `L
 
+nnoremap zo zO
+nnoremap zc zC

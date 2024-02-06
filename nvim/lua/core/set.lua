@@ -1,5 +1,5 @@
 vim.opt.nu = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -20,7 +20,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 20
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -29,3 +29,6 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "99"
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.foldmethod = "indent"
+vim.opt.foldcolumn = "2"
