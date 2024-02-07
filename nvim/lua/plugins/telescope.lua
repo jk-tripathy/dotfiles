@@ -10,13 +10,7 @@ local M = {
         return {
             { mode = "n", "<leader>pf", builtin.find_files, {} },
             { mode = "n", "<leader>f", builtin.git_files, {} },
-            {
-                mode = "n",
-                "<leader>ps",
-                function()
-                    builtin.grep_string({ search = vim.fn.input("Grep > ") })
-                end,
-            },
+            { mode = "n", "<leader>ps", builtin.live_grep, {} },
         }
     end,
 }
