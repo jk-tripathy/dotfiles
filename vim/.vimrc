@@ -36,3 +36,7 @@ noremap <C-l> `L
 
 nnoremap zo zO
 nnoremap zc zC
+nnoremap zO zo
+nnoremap zC zc
+nnoremap zr zR
+nnoremap zm zM
