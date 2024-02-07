@@ -20,7 +20,15 @@ local M = {
             },
         },
         servers = {
-            lua_ls = {},
+            lua_ls = {
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            },
             pylsp = {
                 settings = {
                     pylsp = {
