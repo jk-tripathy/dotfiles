@@ -2,7 +2,7 @@
 
 yeet () {
     projname="${PWD/\/home\/jkt\/Projects\//}"
-    rsync -avuzh --exclude logs --exclude models ~/Projects/$projname/ dfki:$projname/
+    rsync -avuzh --exclude 'logs' ~/Projects/$projname/ dfki:$projname/
 }
 
 # if [ "$1" == "-v" ]

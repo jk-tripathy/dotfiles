@@ -2,7 +2,7 @@
 
 yoink () {
     projname="${PWD/\/home\/jkt\/Projects\//}"
-    rsync -avuzhL --exclude models --exclude logs dfki:$projname/ ~/Projects/$projname/
+    rsync -avuzhL --exclude 'logs' dfki:$projname/ ~/Projects/$projname/
 }
 # if [ "$1" == "-v" ]
 # then
