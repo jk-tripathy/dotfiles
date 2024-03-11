@@ -9,3 +9,4 @@ xfce4/
 .p10k*
 .zcompdump*
 pavucontrol.ini
+wandb/
