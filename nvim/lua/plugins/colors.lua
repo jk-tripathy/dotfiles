@@ -4,7 +4,6 @@ local M = {
     lazy = false,
     opts = {
         variant = "main",
-        dark_variant = "moon",
         disable_background = true,
     },
     config = function(_, opts)

@@ -13,8 +13,6 @@ local M = {
             },
 
             markdown = { "mdformat" },
-
-            ["*"] = { "codespell" },
         },
 
         formatters = {
@@ -33,12 +31,6 @@ local M = {
             mdformat = {
                 prepend_args = {
                     "--number",
-                },
-            },
-            codespell = {
-                prepend_args = {
-                    "--skip=logs/**,data/**,*.ipynb,tests/fixtures/dataset_builders/**",
-                    "--ignore-words-list=hist,abstract,arbitrary,ist",
                 },
             },
             docformatter = {
