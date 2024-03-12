@@ -43,14 +43,14 @@ local M = {
         },
     },
     keys = {
-        { mode = "n", "<leader>gd", vim.lsp.buf.definition },
-        { mode = "n", "<leader>rn", vim.lsp.buf.rename },
-        { mode = "n", "<leader>gr", vim.lsp.buf.references },
+        { mode = "n", "gd", vim.lsp.buf.definition },
+        { mode = "n", "rn", vim.lsp.buf.rename },
+        { mode = "n", "gr", vim.lsp.buf.references },
         { mode = "n", "K", vim.lsp.buf.hover },
-        { mode = "n", "<leader>sd", vim.diagnostic.open_float },
+        { mode = "n", "sd", vim.diagnostic.open_float },
         { mode = "n", "]d", vim.diagnostic.goto_next },
         { mode = "n", "[d", vim.diagnostic.goto_prev },
-        { mode = "n", "<leader>ca", vim.lsp.buf.code_action },
+        { mode = "n", "ca", vim.lsp.buf.code_action },
     },
     config = function(_, opts)
         local lsp = require("lsp-zero")
