@@ -16,7 +16,6 @@ local plugins = {
     performance = {
         rtp = {
             disabled_plugins = {
-                "filetype",
                 "gzip",
                 "matchit",
                 "tarPlugin",
