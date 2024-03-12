@@ -32,6 +32,7 @@ source ~/.config/scripts/GHPbuild.sh
 # aliases
 alias nv="nvim"
 alias w="work"
+alias e="explorer.exe ."
 
 # To customize prompt, run `p10k configure` or edit ~/.config//.p10k.zsh.
 [[ ! -f ~/.config//.p10k.zsh ]] || source ~/.config/.p10k.zsh
