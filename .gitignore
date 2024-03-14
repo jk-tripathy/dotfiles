@@ -10,3 +10,5 @@ xfce4/
 .zcompdump*
 pavucontrol.ini
 wandb/
+flutter/
+google-chrome-beta/
