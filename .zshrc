@@ -4,9 +4,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
 export CHROME_EXECUTABLE='google-chrome-beta'
 export TOKENIZERS_PARALLELISM=false
-
+export DISPLAY=:0
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
