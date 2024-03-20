@@ -5,10 +5,6 @@ local M = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        "hrsh7th/nvim-cmp",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -117,21 +113,6 @@ local M = {
                     require("lspconfig")[server_name].setup(server)
                 end,
             },
-        })
-
-        local cmp = require("cmp")
-        cmp.setup({
-            sources = {
-                { name = "nvim_lsp" },
-                { name = "path" },
-                { name = "buffer" },
-            },
-            mapping = cmp.mapping.preset.insert({
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-d>"] = cmp.mapping.scroll_docs(4),
-            }),
         })
     end,
 }
