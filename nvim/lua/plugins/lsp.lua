@@ -1,6 +1,5 @@
 local M = {
     "VonHeikemen/lsp-zero.nvim",
-    lazy = true,
     event = "BufReadPost",
     dependencies = {
         "neovim/nvim-lspconfig",

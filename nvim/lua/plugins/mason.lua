@@ -1,6 +1,5 @@
 local M = {
     "williamboman/mason.nvim",
-    lazy = true,
     event = "BufReadPost",
     dependencies = {
         {

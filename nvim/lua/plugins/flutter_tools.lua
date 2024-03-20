@@ -3,7 +3,6 @@ local M = {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
-    lazy = true,
     cmd = "FlutterRun",
     config = true,
 }

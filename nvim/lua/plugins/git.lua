@@ -1,7 +1,7 @@
 local M = {
     {
         "tpope/vim-fugitive",
-        lazy = true,
+        event = "BufReadPost",
         keys = {
             { mode = "n", "<leader>gs", vim.cmd.Git },
         },
@@ -9,7 +9,7 @@ local M = {
             local jkt_fugitive = vim.api.nvim_create_augroup("jkt_fugitive", {})
 
             local autocmd = vim.api.nvim_create_autocmd
-            autocmd("BufWinEnter", {
+            autocmd("BufReadPost", {
                 group = jkt_fugitive,
                 pattern = "*",
                 callback = function()
@@ -35,7 +35,7 @@ local M = {
             })
         end,
     },
-    { "airblade/vim-gitgutter", lazy = false },
+    { "airblade/vim-gitgutter", event = "BufReadPost" },
 }
 
 return M

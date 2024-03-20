@@ -1,6 +1,5 @@
 local M = {
     "theprimeagen/harpoon",
-    lazy = true,
     dependencies = {
         "nvim-lua/plenary.nvim",
     },

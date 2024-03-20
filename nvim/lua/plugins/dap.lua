@@ -4,7 +4,6 @@ local M = {
         "mfussenegger/nvim-dap",
         "ChristianChiarulli/neovim-codicons",
     },
-    lazy = true,
     keys = {
         {
             mode = "n",
@@ -22,30 +21,23 @@ local M = {
         },
         {
             mode = "n",
-            "<F5>",
+            "<leader>dc",
             function()
                 require("dap").continue()
             end,
         },
         {
             mode = "n",
-            "<F10>",
+            "<leader>di",
             function()
                 require("dap").step_into()
             end,
         },
         {
             mode = "n",
-            "<F11>",
+            "<leader>do",
             function()
                 require("dap").step_over()
-            end,
-        },
-        {
-            mode = "n",
-            "<F12>",
-            function()
-                require("dap").step_out()
             end,
         },
         {

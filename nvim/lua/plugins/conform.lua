@@ -1,6 +1,5 @@
 local M = {
     "stevearc/conform.nvim",
-    lazy = true,
     event = "BufWritePre",
     opts = {
         formatters_by_ft = {

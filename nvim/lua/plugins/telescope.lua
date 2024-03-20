@@ -4,7 +4,7 @@ local M = {
         "BurntSushi/ripgrep",
         "nvim-lua/plenary.nvim",
     },
-    lazy = true,
+    event = "VimEnter",
     keys = function()
         local builtin = require("telescope.builtin")
         return {

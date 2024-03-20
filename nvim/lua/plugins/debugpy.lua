@@ -1,6 +1,5 @@
 local M = {
     "mfussenegger/nvim-dap-python",
-    lazy = true,
     keys = {
         {
             mode = "n",

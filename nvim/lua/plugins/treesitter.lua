@@ -1,7 +1,6 @@
 local M = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    lazy = true,
     event = "BufRead",
     opts = {
         sync_install = false,
