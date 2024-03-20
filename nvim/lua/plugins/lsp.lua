@@ -1,33 +1,73 @@
 local M = {
-    "VonHeikemen/lsp-zero.nvim",
+    "neovim/nvim-lspconfig",
     event = "BufReadPost",
     dependencies = {
-        "neovim/nvim-lspconfig",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
     },
-    opts = {
-        preferences = {
-            suggest_lsp_servers = true,
-            sign_icons = {
-                error = "E",
-                warn = "W",
-                hint = "H",
-                info = "I",
-            },
-        },
-        servers = {
-            lua_ls = {
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim" },
-                        },
-                    },
-                },
-            },
+    config = function()
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+            callback = function(event)
+                local map = function(keys, func, desc)
+                    vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+                end
+
+                map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+                map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+                map(
+                    "gI",
+                    require("telescope.builtin").lsp_implementations,
+                    "[G]oto [I]mplementation"
+                )
+                map(
+                    "<leader>D",
+                    require("telescope.builtin").lsp_type_definitions,
+                    "Type [D]efinition"
+                )
+                map(
+                    "<leader>ds",
+                    require("telescope.builtin").lsp_document_symbols,
+                    "[D]ocument [S]ymbols"
+                )
+                map(
+                    "<leader>ws",
+                    require("telescope.builtin").lsp_dynamic_workspace_symbols,
+                    "[W]orkspace [S]ymbols"
+                )
+                map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+                map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                map("K", vim.lsp.buf.hover, "Hover Documentation")
+
+                local client = vim.lsp.get_client_by_id(event.data.client_id)
+                if client and client.server_capabilities.documentHighlightProvider then
+                    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+                        buffer = event.buf,
+                        callback = vim.lsp.buf.document_highlight,
+                    })
+
+                    vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+                        buffer = event.buf,
+                        callback = vim.lsp.buf.clear_references,
+                    })
+                end
+            end,
+        })
+
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = vim.tbl_deep_extend(
+            "force",
+            capabilities,
+            require("cmp_nvim_lsp").default_capabilities()
+        )
+
+        local servers = {
+
             pylsp = {
                 settings = {
                     pylsp = {
@@ -39,36 +79,53 @@ local M = {
                     },
                 },
             },
-        },
-    },
-    keys = {
-        { mode = "n", "gd", vim.lsp.buf.definition },
-        { mode = "n", "rn", vim.lsp.buf.rename },
-        { mode = "n", "gr", vim.lsp.buf.references },
-        { mode = "n", "K", vim.lsp.buf.hover },
-        { mode = "n", "sd", vim.diagnostic.open_float },
-        { mode = "n", "]d", vim.diagnostic.goto_next },
-        { mode = "n", "[d", vim.diagnostic.goto_prev },
-        { mode = "n", "ca", vim.lsp.buf.code_action },
-    },
-    config = function(_, opts)
-        local lsp = require("lsp-zero")
+            lua_ls = {
+                settings = {
+                    Lua = {
+                        completion = {
+                            callSnippet = "Replace",
+                        },
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            },
+        }
+
+        require("mason").setup()
+
+        local ensure_installed = vim.tbl_keys(servers or {})
+        vim.list_extend(ensure_installed, {
+            "stylua",
+            "lua_ls",
+            "pylsp",
+            "black",
+            "isort",
+            "mdformat",
+            "debugpy",
+            "docformatter",
+        })
+        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+        require("mason-lspconfig").setup({
+            handlers = {
+                function(server_name)
+                    local server = servers[server_name] or {}
+                    server.capabilities =
+                        vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                    require("lspconfig")[server_name].setup(server)
+                end,
+            },
+        })
+
         local cmp = require("cmp")
-        local cmp_format = lsp.cmp_format()
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-        for server, server_opts in pairs(opts.servers) do
-            lsp.configure(server, server_opts)
-        end
-        lsp.set_preferences(opts.preferences)
-
         cmp.setup({
             sources = {
                 { name = "nvim_lsp" },
                 { name = "path" },
                 { name = "buffer" },
             },
-            formatting = cmp_format,
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
@@ -76,11 +133,7 @@ local M = {
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
             }),
         })
-        lsp.setup({ capabilities = capabilities })
-
-        vim.diagnostic.config({
-            virtual_text = true,
-        })
     end,
 }
+
 return M
