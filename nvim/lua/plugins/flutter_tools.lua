@@ -5,6 +5,7 @@ local M = {
     },
     lazy = true,
     cmd = "FlutterRun",
+    config = true,
 }
 
 return M

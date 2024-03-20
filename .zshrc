@@ -11,7 +11,7 @@ export DISPLAY=:0
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
-path+=("/opt/flutter/bin")
+path=("/opt/flutter/bin" $path)
 export path
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -34,7 +34,7 @@ source ~/.config/scripts/GHPbuild.sh
 alias nv="nvim"
 alias w="work"
 alias e="explorer.exe ."
-alias fd="ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix"
+alias fd="sudo rm -r /tmp/.X11-unix && ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix"
 
 # To customize prompt, run `p10k configure` or edit ~/.config//.p10k.zsh.
 [[ ! -f ~/.config//.p10k.zsh ]] || source ~/.config/.p10k.zsh

@@ -12,7 +12,7 @@ local plugins = {
     spec = {
         import = "plugins",
     },
-    defaults = { lazy = true },
+    defaults = { lazy = false },
     performance = {
         rtp = {
             disabled_plugins = {
