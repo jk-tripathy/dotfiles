@@ -2,7 +2,7 @@ local M = {
     "numToStr/Comment.nvim",
     event = "BufReadPost",
     opts = {
-        opleader = { line = "/", block = "b/" },
+        opleader = { line = ",", block = "b," },
     },
 }
 
