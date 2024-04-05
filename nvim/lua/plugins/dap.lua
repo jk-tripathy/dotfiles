@@ -3,6 +3,7 @@ local M = {
     dependencies = {
         "mfussenegger/nvim-dap",
         "ChristianChiarulli/neovim-codicons",
+        "nvim-neotest/nvim-nio",
     },
     keys = {
         {
