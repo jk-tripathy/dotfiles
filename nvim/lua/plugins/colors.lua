@@ -1,4 +1,4 @@
-local M = {
+local rose_pine = {
     "rose-pine/neovim",
     name = "rose-pine",
     lazy = false,
@@ -12,4 +12,19 @@ local M = {
     end,
 }
 
-return M
+local github = {
+    "projekt0n/github-nvim-theme",
+    name = "github",
+    lazy = false,
+    opts = {
+        options = {
+            transparent = true,
+        },
+    },
+    config = function(_, opts)
+        require("github-theme").setup(opts)
+        vim.cmd.colorscheme("github_dark_default")
+    end,
+}
+
+return github
