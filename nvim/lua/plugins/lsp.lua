@@ -16,6 +16,9 @@ local M = {
 
                 map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
                 map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+                map("sd", vim.diagnostic.open_float, "[S]how [D]iagnostic")
+                map("]d", vim.diagnostic.goto_next, "Next [D]iagnostic")
+                map("[d", vim.diagnostic.goto_prev, "Previous [D]iagnostic")
                 map(
                     "gI",
                     require("telescope.builtin").lsp_implementations,
