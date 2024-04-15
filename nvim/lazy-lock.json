@@ -29,6 +29,7 @@
   "ripgrep": { "branch": "master", "commit": "9da0995df4cde892b899687c20b717c69b4ea0d1" },
   "telescope.nvim": { "branch": "master", "commit": "f06eeb79e14d5c95745558927c5b1f341c0a3a28" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
+  "undotree": { "branch": "master", "commit": "aa93a7e5890dbbebbc064cd22260721a6db1a196" },
   "vim-fugitive": { "branch": "master", "commit": "8d4e8d45385c63a0bf735fe1164772116bf0da0d" },
   "vim-gitgutter": { "branch": "main", "commit": "67ef116100b40f9ca128196504a2e0bc0a2753b0" }
 }
