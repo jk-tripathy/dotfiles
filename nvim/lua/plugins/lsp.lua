@@ -25,11 +25,6 @@ local M = {
                     "[G]oto [I]mplementation"
                 )
                 map(
-                    "<leader>D",
-                    require("telescope.builtin").lsp_type_definitions,
-                    "Type [D]efinition"
-                )
-                map(
                     "<leader>ds",
                     require("telescope.builtin").lsp_document_symbols,
                     "[D]ocument [S]ymbols"
