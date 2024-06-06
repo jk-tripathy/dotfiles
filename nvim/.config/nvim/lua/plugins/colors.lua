@@ -27,4 +27,14 @@ local github = {
     end,
 }
 
-return github
+local oxocarbon = {
+    "nyoom-engineering/oxocarbon.nvim",
+    name = "oxocarbon",
+    lazy = false,
+    config = function()
+        vim.o.background = "dark"
+        vim.cmd.colorscheme("oxocarbon")
+    end,
+}
+
+return oxocarbon
