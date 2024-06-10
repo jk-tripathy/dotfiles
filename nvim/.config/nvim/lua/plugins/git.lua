@@ -1,7 +1,7 @@
 local M = {
     {
         "tpope/vim-fugitive",
-        event = "BufReadPost",
+        lazy = false,
         keys = {
             { mode = "n", "<leader>gs", vim.cmd.Git },
         },

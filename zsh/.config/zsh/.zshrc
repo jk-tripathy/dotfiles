@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
 path=("/opt/flutter/bin" $path)
-path=("~/.local/bin" $path)
+path=("$HOME/.local/bin" $path)
 export path
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
