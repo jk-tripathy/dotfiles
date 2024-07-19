@@ -38,4 +38,4 @@ vim.keymap.set("n", "zr", "zR")
 vim.keymap.set("n", "zm", "zM")
 
 -- pre-commit easy run
-vim.keymap.set("n", "<leader>cp", ":!pre-commit run -a<CR>")
+vim.keymap.set("n", "<leader>pc", ":!pre-commit run -a<CR>")
