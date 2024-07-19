@@ -36,3 +36,6 @@ vim.keymap.set("n", "zo", "zO")
 vim.keymap.set("n", "zO", "zo")
 vim.keymap.set("n", "zr", "zR")
 vim.keymap.set("n", "zm", "zM")
+
+-- pre-commit easy run
+vim.keymap.set("n", "<leader>cp", ":!pre-commit run -a<CR>")
