@@ -10,6 +10,8 @@ export TOKENIZERS_PARALLELISM=false
 export DISPLAY=:0
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 path=("/opt/flutter/bin" $path)
 path=("$HOME/.local/bin" $path)
