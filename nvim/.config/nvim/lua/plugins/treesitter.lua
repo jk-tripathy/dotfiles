@@ -9,6 +9,13 @@ local M = {
             enable = true,
             additional_vim_regex_highlighting = false,
         },
+        ensure_installed = {
+            "python",
+            "lua",
+            "markdown",
+            "markdown_inline",
+            "html",
+        },
     },
     config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
