@@ -9,19 +9,23 @@ local M = {
         sections = {
             lualine_b = {
                 "branch",
-                "diff",
+            },
+            lualine_c = {
+                {
+                    "filename",
+                    path = 0,
+                },
+            },
+            lualine_x = {
                 {
                     "diagnostics",
                     symbols = { error = "E:", warn = "W:", info = "I:", hint = "H:" },
                 },
             },
-            lualine_c = {
-                {
-                    "filename",
-                    path = 1,
-                },
+            lualine_y = {
+                "diff",
             },
-            lualine_x = { "encoding", "filetype" },
+            lualine_z = {},
         },
     },
     config = function(_, opts)
