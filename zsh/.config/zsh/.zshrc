@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
-export CHROME_EXECUTABLE='/mnt/c/Program Files/Google/Chrome/Application/chrome.exe'
+export CHROME_EXECUTABLE='google-chrome'
 export TOKENIZERS_PARALLELISM=false
 export DISPLAY=:0
 export ZSH="$HOME/.oh-my-zsh"
@@ -13,6 +13,7 @@ export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+path=("$HOME/chromedriver-linux64/" $path)
 path=("$HOME/flutter/bin" $path)
 path=("$HOME/.local/bin" $path)
 export path
