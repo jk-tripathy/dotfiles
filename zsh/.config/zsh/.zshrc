@@ -29,9 +29,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # source ~/.pyenvs/base/bin/activate
 
-source ~/.config/scripts/work.sh
-source ~/.config/scripts/yeet.sh
-source ~/.config/scripts/yoink.sh
 source ~/.config/scripts/GHPbuild.sh
 
 # aliases
