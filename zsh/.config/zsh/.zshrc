@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 # source ~/.pyenvs/base/bin/activate
 
 source ~/.config/scripts/GHPbuild.sh
+source ~/.config/scripts/work.sh
 
 # aliases
 alias nv="nvim"
