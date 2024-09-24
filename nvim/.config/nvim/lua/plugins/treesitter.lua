@@ -15,6 +15,7 @@ local M = {
             "markdown",
             "markdown_inline",
             "html",
+            "dart",
         },
     },
     config = function(_, opts)
