@@ -10,7 +10,7 @@ local M = {
                 "isort",
                 "docformatter",
             },
-
+            dart = { "dart_format" },
             markdown = { "mdformat" },
         },
 
