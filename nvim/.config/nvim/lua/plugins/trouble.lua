@@ -3,11 +3,9 @@ local M = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
         {
-            mode = "n",
-            "t",
-            function()
-                require("trouble").toggle()
-            end,
+            "<leader>tt",
+            "<cmd>Trouble diagnostics toggle<cr>",
+            desc = "Diagnostics (Trouble)",
         },
     },
     opts = {

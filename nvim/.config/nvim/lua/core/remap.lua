@@ -1,7 +1,5 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-
 -- easier inline jumps
 vim.keymap.set("n", "E", "$")
 vim.keymap.set("n", "B", "0")
@@ -26,10 +24,6 @@ vim.keymap.set("n", "<M-,>", ":vertical resize -5<CR>")
 vim.keymap.set("n", "<M-.>", ":vertical resize +5<CR>")
 vim.keymap.set("n", "<M-<>", ":resize -5<CR>")
 vim.keymap.set("n", "<M->>", ":resize +5<CR>")
-
--- splits
-vim.keymap.set("n", "<M-->", ":Hex!<CR>")
-vim.keymap.set("n", "<M-=>", ":Vex!<CR>")
 
 -- better folding
 vim.keymap.set("n", "zo", "zO")
