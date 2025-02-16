@@ -14,29 +14,29 @@ local M = {
                     vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
                 end
 
-                map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-                map("sd", vim.diagnostic.open_float, "[S]how [D]iagnostic")
-                map("]d", vim.diagnostic.goto_next, "Next [D]iagnostic")
-                map("[d", vim.diagnostic.goto_prev, "Previous [D]iagnostic")
-                map(
-                    "gI",
-                    require("telescope.builtin").lsp_implementations,
-                    "[G]oto [I]mplementation"
-                )
-                map(
-                    "<leader>ds",
-                    require("telescope.builtin").lsp_document_symbols,
-                    "[D]ocument [S]ymbols"
-                )
-                map(
-                    "<leader>ws",
-                    require("telescope.builtin").lsp_dynamic_workspace_symbols,
-                    "[W]orkspace [S]ymbols"
-                )
-                map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-                map("K", vim.lsp.buf.hover, "Hover Documentation")
+                -- map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+                -- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+                -- map("sd", vim.diagnostic.open_float, "[S]how [D]iagnostic")
+                -- map("]d", vim.diagnostic.goto_next, "Next [D]iagnostic")
+                -- map("[d", vim.diagnostic.goto_prev, "Previous [D]iagnostic")
+                -- map(
+                --     "gI",
+                --     require("telescope.builtin").lsp_implementations,
+                --     "[G]oto [I]mplementation"
+                -- )
+                -- map(
+                --     "<leader>ds",
+                --     require("telescope.builtin").lsp_document_symbols,
+                --     "[D]ocument [S]ymbols"
+                -- )
+                -- map(
+                --     "<leader>ws",
+                --     require("telescope.builtin").lsp_dynamic_workspace_symbols,
+                --     "[W]orkspace [S]ymbols"
+                -- )
+                -- map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+                -- map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+                -- map("K", vim.lsp.buf.hover, "Hover Documentation")
 
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
                 if client and client.server_capabilities.documentHighlightProvider then
