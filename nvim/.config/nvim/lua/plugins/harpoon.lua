@@ -12,7 +12,7 @@ local M = {
                 mode = "n",
                 "<C-a>",
                 function()
-                    harpoon:list().add()
+                    harpoon:list():add()
                 end,
             },
             {
