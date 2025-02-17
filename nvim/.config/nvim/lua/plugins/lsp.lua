@@ -4,64 +4,10 @@ local M = {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "saghen/blink.cmp",
     },
-    config = function()
-        vim.api.nvim_create_autocmd("LspAttach", {
-            group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-            callback = function(event)
-                local map = function(keys, func, desc)
-                    vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-                end
-
-                -- map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-                -- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-                -- map("sd", vim.diagnostic.open_float, "[S]how [D]iagnostic")
-                -- map("]d", vim.diagnostic.goto_next, "Next [D]iagnostic")
-                -- map("[d", vim.diagnostic.goto_prev, "Previous [D]iagnostic")
-                -- map(
-                --     "gI",
-                --     require("telescope.builtin").lsp_implementations,
-                --     "[G]oto [I]mplementation"
-                -- )
-                -- map(
-                --     "<leader>ds",
-                --     require("telescope.builtin").lsp_document_symbols,
-                --     "[D]ocument [S]ymbols"
-                -- )
-                -- map(
-                --     "<leader>ws",
-                --     require("telescope.builtin").lsp_dynamic_workspace_symbols,
-                --     "[W]orkspace [S]ymbols"
-                -- )
-                -- map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-                -- map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-                -- map("K", vim.lsp.buf.hover, "Hover Documentation")
-
-                local client = vim.lsp.get_client_by_id(event.data.client_id)
-                if client and client.server_capabilities.documentHighlightProvider then
-                    vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-                        buffer = event.buf,
-                        callback = vim.lsp.buf.document_highlight,
-                    })
-
-                    vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-                        buffer = event.buf,
-                        callback = vim.lsp.buf.clear_references,
-                    })
-                end
-            end,
-        })
-
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend(
-            "force",
-            capabilities,
-            require("cmp_nvim_lsp").default_capabilities()
-        )
-
-        local servers = {
-
+    opts = {
+        servers = {
             pylsp = {
                 settings = {
                     pylsp = {
@@ -85,33 +31,31 @@ local M = {
                     },
                 },
             },
-        }
+        },
+    },
+    config = function(_, opts)
+        local lspconfig = require("lspconfig")
+        local blink = require("blink.cmp")
+        local mason = require("mason")
+        local mason_lspconfig = require("mason-lspconfig")
 
-        require("mason").setup()
+        -- Mason setup
+        mason.setup()
+        mason_lspconfig.setup({ ensure_installed = opts.servers })
 
-        local ensure_installed = vim.tbl_keys(servers or {})
-        vim.list_extend(ensure_installed, {
-            "stylua",
-            "lua_ls",
-            "pylsp",
-            "black",
-            "isort",
-            "mdformat",
-            "debugpy",
-            "docformatter",
-        })
-        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+        for server, config in pairs(opts.servers) do
+            config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+            lspconfig[server].setup(config)
+        end
 
-        require("mason-lspconfig").setup({
-            handlers = {
-                function(server_name)
-                    local server = servers[server_name] or {}
-                    server.capabilities =
-                        vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-                    require("lspconfig")[server_name].setup(server)
-                end,
-            },
-        })
+        -- vim.api.nvim_create_autocmd("LspAttach", {
+        --     callback = function(args)
+        --         local c = vim.lsp.get_client_by_id(args.data.client_id)
+        --         if not c then
+        --             return
+        --         end
+        --     end,
+        -- })
     end,
 }
 

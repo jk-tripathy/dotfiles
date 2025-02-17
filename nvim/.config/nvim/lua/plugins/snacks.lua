@@ -179,13 +179,6 @@ local M = {
             desc = "Code Actions",
         },
         {
-            "K",
-            function()
-                Snacks.picker.lsp_hover()
-            end,
-            desc = "Hover",
-        },
-        {
             "<leader>sd",
             function()
                 Snacks.picker.lsp_diagnostics()
