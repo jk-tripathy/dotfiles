@@ -2,6 +2,7 @@ local M = {
     "stevearc/oil.nvim",
     lazy = false,
     cmd = "Oil",
+    dependencies = { "nvim-tree/nvim-web-devicons", "folke/snacks.nvim" },
     keys = {
         {
             mode = "n",
@@ -32,7 +33,6 @@ local M = {
             show_hidden = true,
         },
     },
-    dependencies = { "nvim-tree/nvim-web-devicons" },
 }
 
 return M
