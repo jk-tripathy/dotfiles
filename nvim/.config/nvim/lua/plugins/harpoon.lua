@@ -17,7 +17,7 @@ local M = {
             },
             {
                 mode = "n",
-                "<C-a>",
+                "<C-q>",
                 function()
                     harpoon.ui:toggle_quick_menu(harpoon:list())
                 end,
