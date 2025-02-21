@@ -20,6 +20,13 @@ local M = {
         },
         {
             mode = "n",
+            "<CR>",
+            function()
+                require("oil").select()
+            end,
+        },
+        {
+            mode = "n",
             "<M-->",
             function()
                 vim.cmd.split()
