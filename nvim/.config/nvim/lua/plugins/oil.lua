@@ -13,6 +13,13 @@ local M = {
         },
         {
             mode = "n",
+            "-",
+            function()
+                vim.cmd.Oil.parent()
+            end,
+        },
+        {
+            mode = "n",
             "<M-->",
             function()
                 vim.cmd.split()
@@ -32,6 +39,7 @@ local M = {
         view_options = {
             show_hidden = true,
         },
+        use_default_keymaps = false,
     },
 }
 
