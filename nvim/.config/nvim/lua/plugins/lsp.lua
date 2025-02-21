@@ -33,6 +33,24 @@ local M = {
             },
         },
     },
+    keys = {
+        {
+            mode = "n",
+            "<leader>ca",
+            function()
+                vim.lsp.buf.code_action()
+            end,
+            "Code Action",
+        },
+        {
+            mode = "n",
+            "<leader>rn",
+            function()
+                vim.lsp.buf.rename()
+            end,
+            "Rename Symbol",
+        },
+    },
     config = function(_, opts)
         local lspconfig = require("lspconfig")
         local blink = require("blink.cmp")
@@ -47,15 +65,6 @@ local M = {
             config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
             lspconfig[server].setup(config)
         end
-
-        -- vim.api.nvim_create_autocmd("LspAttach", {
-        --     callback = function(args)
-        --         local c = vim.lsp.get_client_by_id(args.data.client_id)
-        --         if not c then
-        --             return
-        --         end
-        --     end,
-        -- })
     end,
 }
 

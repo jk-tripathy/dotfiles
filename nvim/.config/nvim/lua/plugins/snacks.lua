@@ -20,25 +20,11 @@ local M = {
             desc = "Find Git Files",
         },
         {
-            "<leader>:",
-            function()
-                Snacks.picker.command_history()
-            end,
-            desc = "Command History",
-        },
-        {
             "<leader>pf",
             function()
                 Snacks.picker.files()
             end,
             desc = "Find Files",
-        },
-        {
-            "<leader>fr",
-            function()
-                Snacks.picker.recent()
-            end,
-            desc = "Recent",
         },
         -- git
         {
@@ -56,7 +42,7 @@ local M = {
             desc = "Git Log",
         },
         {
-            "<leader>ggs",
+            "<leader>gs",
             function()
                 Snacks.picker.git_status()
             end,
@@ -84,20 +70,6 @@ local M = {
             end,
             desc = "Visual selection or word",
             mode = { "n", "x" },
-        },
-        {
-            "<leader>sd",
-            function()
-                Snacks.picker.diagnostics()
-            end,
-            desc = "Diagnostics",
-        },
-        {
-            "<leader>sk",
-            function()
-                Snacks.picker.keymaps()
-            end,
-            desc = "Keymaps",
         },
         {
             "<leader>sq",
@@ -164,28 +136,7 @@ local M = {
             end,
             desc = "LSP Workspace Symbols",
         },
-        {
-            "<leader>rn",
-            function()
-                Snacks.picker.lsp_rename()
-            end,
-            desc = "Rename",
-        },
-        {
-            "<leader>sd",
-            function()
-                Snacks.picker.lsp_diagnostics()
-            end,
-            desc = "Diagnostics",
-        },
         -- Other
-        {
-            "<leader>z",
-            function()
-                Snacks.zen()
-            end,
-            desc = "Toggle Zen Mode",
-        },
         {
             "<leader>Z",
             function()
@@ -194,18 +145,11 @@ local M = {
             desc = "Toggle Zoom",
         },
         {
-            "<leader>cR",
+            "<leader>rf",
             function()
                 Snacks.rename.rename_file()
             end,
             desc = "Rename File",
-        },
-        {
-            "<c-/>",
-            function()
-                Snacks.terminal()
-            end,
-            desc = "Toggle Terminal",
         },
     },
     init = function()

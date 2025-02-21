@@ -15,7 +15,7 @@ local M = {
             mode = "n",
             "-",
             function()
-                vim.cmd.Oil.parent()
+                require("oil").up()
             end,
         },
         {
