@@ -172,13 +172,6 @@ local M = {
             desc = "Rename",
         },
         {
-            "<leader>ca",
-            function()
-                Snacks.picker.lsp_code_actions()
-            end,
-            desc = "Code Actions",
-        },
-        {
             "<leader>sd",
             function()
                 Snacks.picker.lsp_diagnostics()
