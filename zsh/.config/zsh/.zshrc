@@ -11,9 +11,20 @@ export DISPLAY=:0
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"
+export ANDROID_HOME="$HOME/android-sdk/"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 path=("$HOME/chromedriver-linux64/" $path)
+# Android sdk 
+path=("$ANDROID_HOME/tools" $path)
+path=("$ANDROID_HOME/tools/bin" $path)
+path=("$ANDROID_HOME/cmdline-tools/" $path)
+path=("$ANDROID_HOME/cmdline-tools/latest/bin" $path)
+path=("$ANDROID_HOME/platform-tools" $path)
+path=("$ANDROID_HOME/emulator/" $path)
+
+
+# flutter
 path=("$HOME/flutter/bin" $path)
 path=("$HOME/.local/bin" $path)
 export path
@@ -41,5 +52,5 @@ alias fd="sudo rm -r /tmp/.X11-unix && ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix"
 # To customize prompt, run `p10k configure` or edit ~/.config//.p10k.zsh.
 [[ ! -f ~/.config//.p10k.zsh ]] || source ~/.config/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh//.p10k.zsh.
-[[ ! -f ~/.config/zsh//.p10k.zsh ]] || source ~/.config/zsh//.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
