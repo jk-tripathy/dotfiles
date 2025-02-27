@@ -13,20 +13,6 @@ local M = {
         },
         {
             mode = "n",
-            "-",
-            function()
-                require("oil").up()
-            end,
-        },
-        {
-            mode = "n",
-            "<CR>",
-            function()
-                require("oil").select()
-            end,
-        },
-        {
-            mode = "n",
             "<M-->",
             function()
                 vim.cmd.split()
@@ -46,7 +32,12 @@ local M = {
         view_options = {
             show_hidden = true,
         },
-        use_default_keymaps = false,
+        use_default_keymaps = true,
+        keymaps = {
+            ["<C-s>"] = false,
+            ["<C-h>"] = false,
+            ["<C-t>"] = false,
+        },
     },
 }
 
