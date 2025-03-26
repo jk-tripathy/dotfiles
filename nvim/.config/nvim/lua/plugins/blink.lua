@@ -1,7 +1,10 @@
 local M = {
     "saghen/blink.cmp",
-    dependencies = "rafamadriz/friendly-snippets",
+    dependencies = { "rafamadriz/friendly-snippets" },
     opts = {
+        fuzzy = {
+            implementation = "lua"
+        },
         keymap = {
             preset = "default",
             ["<C-space>"] = { "show", "fallback" },
@@ -24,8 +27,8 @@ local M = {
                 border = "single",
                 draw = {
                     columns = {
-                        { "kind_icon", gap = 1 },
-                        { "label", gap = 4 },
+                        { "kind_icon",  gap = 1 },
+                        { "label",      gap = 4 },
                         { "kind" },
                         { "source_name" },
                     },
@@ -37,6 +40,7 @@ local M = {
                 auto_show_delay_ms = 200,
             },
         },
+
         signature = { enabled = true, window = { border = "single" } },
     },
 }

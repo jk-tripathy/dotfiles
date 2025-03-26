@@ -5,6 +5,7 @@ local M = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "saghen/blink.cmp",
+        "nvim-java/nvim-java"
     },
     opts = {
         servers = {
@@ -31,6 +32,26 @@ local M = {
                     },
                 },
             },
+            jdtls = {
+                settings = {
+                    java = {
+                        configurations = {
+                            runtimes = {
+                                {
+                                    name = "Java17",
+                                    path = "/usr/bin/java",
+                                },
+                                {
+                                    name = "Java21",
+                                    path = "/usr/bin/java21",
+                                    default = true,
+                                },
+                            },
+
+                        },
+                    },
+                },
+            },
         },
     },
     keys = {
@@ -52,6 +73,12 @@ local M = {
         },
     },
     config = function(_, opts)
+        require('java').setup(
+            {
+                jdk = {
+                    auto_install = false
+                },
+            })
         local lspconfig = require("lspconfig")
         local blink = require("blink.cmp")
         local mason = require("mason")
@@ -62,7 +89,7 @@ local M = {
         mason_lspconfig.setup({ ensure_installed = opts.servers })
 
         for server, config in pairs(opts.servers) do
-            config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+            config.capabilities = blink.get_lsp_capabilities(config.capabilities)
             lspconfig[server].setup(config)
         end
     end,
