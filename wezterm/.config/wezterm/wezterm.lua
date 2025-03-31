@@ -6,7 +6,7 @@ local act = wezterm.action
 config.color_scheme = "Oxocarbon Dark"
 
 -- Font Settings
-config.font_size = 14
+config.font_size = 15
 config.line_height = 1.2
 config.font = wezterm.font("Iosevka Nerd Font")
 
