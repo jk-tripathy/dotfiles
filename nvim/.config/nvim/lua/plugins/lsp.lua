@@ -52,6 +52,16 @@ local M = {
                     },
                 },
             },
+            ts_ls = {
+                settings = {
+                    typescript = {
+                        format = {
+                            indentSize = 2
+                        }
+                    },
+                },
+
+            },
         },
     },
     keys = {

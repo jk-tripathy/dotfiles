@@ -55,6 +55,13 @@ local M = {
             end,
             desc = "Git Diff (Hunks)",
         },
+        {
+            "<leader>gg",
+            function()
+                Snacks.lazygit()
+            end,
+            desc = "Lazygit",
+        },
         -- Search
         {
             "<leader>ps",
@@ -79,13 +86,6 @@ local M = {
             desc = "Quickfix List",
         },
         -- LSP
-        {
-            "<leader>gg",
-            function()
-                Snacks.lazygit()
-            end,
-            desc = "Lazygit",
-        },
         {
             "gd",
             function()
