@@ -5,7 +5,7 @@ local M = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "saghen/blink.cmp",
-        "nvim-java/nvim-java"
+        "mfussenegger/nvim-jdtls",
     },
     opts = {
         servers = {
@@ -32,36 +32,17 @@ local M = {
                     },
                 },
             },
-            jdtls = {
-                settings = {
-                    java = {
-                        configurations = {
-                            runtimes = {
-                                {
-                                    name = "Java17",
-                                    path = "/usr/bin/java",
-                                },
-                                {
-                                    name = "Java21",
-                                    path = "/usr/bin/java21",
-                                    default = true,
-                                },
-                            },
-
-                        },
-                    },
-                },
-            },
             ts_ls = {
                 settings = {
                     typescript = {
                         format = {
-                            indentSize = 2
-                        }
+                            indentSize = 2,
+                        },
                     },
                 },
-
             },
+            smithy_ls = {},
+            lemminx = {},
         },
     },
     keys = {
@@ -83,12 +64,6 @@ local M = {
         },
     },
     config = function(_, opts)
-        require('java').setup(
-            {
-                jdk = {
-                    auto_install = false
-                },
-            })
         local lspconfig = require("lspconfig")
         local blink = require("blink.cmp")
         local mason = require("mason")
