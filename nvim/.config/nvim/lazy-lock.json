@@ -1,6 +1,5 @@
 {
   "blink.cmp": { "branch": "main", "commit": "efa0b4d94d2dd1e7b572cd9bd83fbf394d60ec4a" },
-  "coc.nvim": { "branch": "release", "commit": "341a73d9a4195f2a4c8056b5dc668564cc9914f5" },
   "conform.nvim": { "branch": "master", "commit": "eebc724d12c5579d733d1f801386e0ceb909d001" },
   "flutter-tools.nvim": { "branch": "main", "commit": "6faf2c70bd56f1fe78620591a2bb73f4dc6f4870" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
