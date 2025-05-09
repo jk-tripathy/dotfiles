@@ -15,8 +15,7 @@ local M = {
             mode = "n",
             "<leader>we",
             function()
-                print(vim.fn.getcwd())
-                vim.cmd.Oil(vim.fn.getcwd())
+                vim.cmd.Oil(vim.fn.getcwd() .. "/src")
             end,
         },
         {
