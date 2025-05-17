@@ -33,7 +33,23 @@ end)
 
 -- keybinds
 config.keys = {
+	-- domains
+	{
+		key = "a",
+		mods = "CTRL|SHIFT",
+		action = act.AttachDomain("dd"),
+	},
+	{
+		key = "d",
+		mods = "CTRL|SHIFT",
+		action = act.DetachDomain({ DomainName = "dd" }),
+	},
 	-- launcher
+	{
+		key = " ",
+		mods = "ALT",
+		action = act.ShowLauncher,
+	},
 	{
 		key = "q",
 		mods = "CTRL|SHIFT",
@@ -43,7 +59,7 @@ config.keys = {
 	},
 	-- workspaces
 	{
-		key = "a",
+		key = "n",
 		mods = "CTRL|SHIFT",
 		action = act.PromptInputLine({
 			description = wezterm.format({
