@@ -13,7 +13,8 @@ config.font = wezterm.font("Iosevka Nerd Font")
 -- Apperance
 config.cursor_blink_rate = 0
 config.window_decorations = "RESIZE"
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
+config.use_fancy_tab_bar = false
 config.window_padding = {
 	left = 10,
 	right = 10,
@@ -26,8 +27,46 @@ config.colors = {
 }
 config.macos_window_background_blur = 40
 
+wezterm.on("update-right-status", function(window, pane)
+	window:set_left_status(window:active_workspace())
+end)
+
 -- keybinds
 config.keys = {
+	-- launcher
+	{
+		key = "q",
+		mods = "CTRL|SHIFT",
+		action = act.ShowLauncherArgs({
+			flags = "FUZZY|WORKSPACES",
+		}),
+	},
+	-- workspaces
+	{
+		key = "a",
+		mods = "CTRL|SHIFT",
+		action = act.PromptInputLine({
+			description = wezterm.format({
+				{ Attribute = { Intensity = "Bold" } },
+				{ Foreground = { AnsiColor = "Fuchsia" } },
+				{ Text = "Enter name for new workspace" },
+			}),
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					window:perform_action(
+						act.SwitchToWorkspace({
+							name = line,
+							spawn = {
+								cwd = "workplace",
+								domain = { DomainName = "dd" },
+							},
+						}),
+						pane
+					)
+				end
+			end),
+		}),
+	},
 	-- close pane
 	{
 		key = "w",
@@ -90,6 +129,20 @@ config.keys = {
 		key = ">",
 		mods = "CTRL|SHIFT|ALT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
+	},
+}
+
+-- ssh domains
+config.ssh_domains = {
+	{
+		name = "dd",
+		remote_address = "dev-dsk-jkt-1b-0109c800.eu-west-1.amazon.com",
+		ssh_option = {
+			identitiesonly = "yes",
+		},
+		username = "jkt",
+		multiplexing = "WezTerm",
+		remote_wezterm_path = "/home/jkt//wezterm/target/release/wezterm",
 	},
 }
 
