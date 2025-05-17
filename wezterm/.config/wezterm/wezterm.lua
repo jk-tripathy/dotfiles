@@ -130,6 +130,19 @@ config.keys = {
 		mods = "CTRL|SHIFT|ALT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
+	-- Rename current tab
+	{
+		key = "r",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.PromptInputLine({
+			description = "Enter new name for tab",
+			action = wezterm.action_callback(function(window, _, line)
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
 }
 
 -- ssh domains
