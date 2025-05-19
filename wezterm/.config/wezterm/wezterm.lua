@@ -28,7 +28,7 @@ config.colors = {
 config.macos_window_background_blur = 40
 
 wezterm.on("update-right-status", function(window, pane)
-	window:set_left_status(window:active_workspace())
+	window:set_left_status(string.format(" %s: ", window:active_workspace()))
 end)
 
 -- keybinds
