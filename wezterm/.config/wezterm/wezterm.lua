@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 -- Color Scheme
-config.color_scheme = "Catpuccin Mocha"
+config.color_scheme = "Catppuccin Mocha"
 
 -- Font Settings
 config.font_size = 16
