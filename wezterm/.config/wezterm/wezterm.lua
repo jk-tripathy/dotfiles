@@ -73,7 +73,6 @@ config.keys = {
 						act.SwitchToWorkspace({
 							name = line,
 							spawn = {
-								cwd = "workplace",
 								domain = { DomainName = "dd" },
 							},
 						}),
@@ -171,7 +170,9 @@ config.ssh_domains = {
 		},
 		username = "jkt",
 		multiplexing = "WezTerm",
-		remote_wezterm_path = "/home/jkt//wezterm/target/release/wezterm",
+		remote_wezterm_path = "/home/jkt/wezterm/target/release/wezterm",
+        assume_shell = "Posix",
+        local_echo_threshold_ms = 500,
 	},
 }
 
