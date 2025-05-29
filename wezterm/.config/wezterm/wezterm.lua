@@ -28,7 +28,7 @@ config.colors = {
 config.macos_window_background_blur = 40
 
 wezterm.on("update-right-status", function(window, pane)
-	window:set_left_status(string.format(" %s: ", window:active_workspace()))
+	window:set_left_status(string.format(" %s@%s: ", window:active_workspace(), pane:get_domain_name()))
 end)
 
 -- keybinds
@@ -37,12 +37,12 @@ config.keys = {
 	{
 		key = "a",
 		mods = "CTRL|SHIFT",
-		action = act.AttachDomain("dd"),
+		action = act.AttachDomain("dev"),
 	},
 	{
 		key = "d",
 		mods = "CTRL|SHIFT",
-		action = act.DetachDomain({ DomainName = "dd" }),
+		action = act.DetachDomain({ DomainName = "dev" }),
 	},
 	-- launcher
 	{
@@ -73,7 +73,7 @@ config.keys = {
 						act.SwitchToWorkspace({
 							name = line,
 							spawn = {
-								domain = { DomainName = "dd" },
+								domain = { DomainName = "dev" },
 							},
 						}),
 						pane
@@ -161,19 +161,24 @@ config.keys = {
 }
 
 -- ssh domains
-config.ssh_domains = {
-	{
-		name = "dd",
-		remote_address = "dev-dsk-jkt-1b-0109c800.eu-west-1.amazon.com",
-		ssh_option = {
-			identitiesonly = "yes",
-		},
-		username = "jkt",
-		multiplexing = "WezTerm",
-		remote_wezterm_path = "/home/jkt/wezterm/target/release/wezterm",
-        assume_shell = "Posix",
-        local_echo_threshold_ms = 500,
-	},
+-- config.ssh_domains = {
+-- 	{
+-- 		name = "dd",
+-- 		remote_address = "dev-dsk-jkt-1b-0109c800.eu-west-1.amazon.com",
+-- 		username = "jkt",
+-- 		multiplexing = "WezTerm",
+-- 		remote_wezterm_path = "/home/jkt/wezterm/target/release/wezterm",
+--         assume_shell = "Posix",
+--         local_echo_threshold_ms = 500,
+-- 	},
+-- }
+
+-- unix domains
+config.unix_domains = {
+  {
+    name = "dev",
+    proxy_command = { "ssh", "-X", "dev-dsk-jkt-1b-0109c800.eu-west-1.amazon.com", "/home/jkt/wezterm/target/release/wezterm", "cli", "--prefer-mux", "proxy" },
+  },
 }
 
 -- WSL 2
