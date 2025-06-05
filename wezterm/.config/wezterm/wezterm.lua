@@ -160,6 +160,15 @@ config.keys = {
 	},
 }
 
+-- tab nav
+for i = 1, 8 do
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = 'CTRL',
+    action = act.ActivateTab(i - 1),
+  })
+end
+
 -- ssh domains
 -- config.ssh_domains = {
 -- 	{
