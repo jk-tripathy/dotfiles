@@ -34,8 +34,8 @@ vim.opt.colorcolumn = "99"
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.foldmethod = "indent"
-vim.opt.foldcolumn = "2"
+-- vim.opt.foldmethod = "indent"
+-- vim.opt.foldcolumn = "2"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true

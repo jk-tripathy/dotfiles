@@ -43,7 +43,7 @@ local M = {
             },
             smithy_ls = {},
             lemminx = {},
-        },
+        }
     },
     keys = {
         {
