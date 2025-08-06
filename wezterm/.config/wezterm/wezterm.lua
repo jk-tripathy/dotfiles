@@ -182,6 +182,12 @@ end
 -- 	},
 -- }
 
+config.daemon_options = {
+  stdout = '/home/jkt/.local/share/wezterm/stdout',
+  stderr = '/home/jkt/.local/share/wezterm/strerr',
+  pid_file = '/home/jkt/.local/share/wezterm/pid_file',
+}
+
 -- unix domains
 config.unix_domains = {
   {
