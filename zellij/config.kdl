@@ -30,7 +30,7 @@ keybinds clear-defaults=true {
         bind "Alt f" { ToggleFloatingPanes; SwitchToMode "normal"; }
         // Tab 
         bind "Alt T" { NewTab; SwitchToMode "normal"; }
-        bind "Alt tab" { ToggleTab; }
+        bind "Alt tab" { GoToNextTab; SwitchToMode "normal"; }
         bind "Alt R" { SwitchToMode "renametab"; TabNameInput 0; }
         // Session
         bind "Alt q" {
