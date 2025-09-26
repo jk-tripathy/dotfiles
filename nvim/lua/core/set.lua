@@ -32,10 +32,8 @@ vim.opt.updatetime = 100
 
 vim.opt.colorcolumn = "99"
 
-vim.opt.clipboard = "unnamedplus"
-
--- vim.opt.foldmethod = "indent"
--- vim.opt.foldcolumn = "2"
-
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.g.clipboard = 'osc52'
+vim.opt.clipboard = "unnamedplus"
