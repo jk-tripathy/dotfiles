@@ -1,45 +1,46 @@
+* {
+    font-family: "Hack", monospace;
+}
+
 window {
-    margin: 0px;
-    border: 2px solid #cdd6f4;
-    background-color: #100f0f;
+    background-color: #007d6f; /* cachydgreen */
 }
 
 #input {
     margin: 5px;
+    border-radius: 0px;
     border: none;
-    color: #cdd6f4;
-    background-color: #4475a;
+    background-color: #111826; /* cachydgreen */
+    color: #ffffffff; /* cachywhite */
 }
 
 #inner-box {
-    margin: 5px;
-    border: none;
-    background-color: #100f0f;
+    background-color: #111826; /* cachydblue */
 }
 
 #outer-box {
-    margin: 5px;
-    border: none;
-    background-color: #100f0f;
+    margin: 2px;
+    padding: 10px;
+    background-color: #111826; /* cachydblue */
 }
 
 #scroll {
-    margin: 0px;
-    border: none;
+    margin: 5px;
 }
 
 #text {
-    margin: 5px;
-    border: none;
-    color: #f8f8f2;
+    padding: 4px;
+    color: #ffffffff; /* cachywhite */
+}
+
+#entry:nth-child(even){
+    background-color: #182545; /* cachymblue */
 }
 
 #entry:selected {
-    border: 2px solid #cdd6f4;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #00aa84; /* cachymgreen */
 }
 
-#entry:selected #text {
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0);
+#text:selected {
+    background: transparent;
 }
