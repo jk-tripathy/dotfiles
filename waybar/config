@@ -28,7 +28,7 @@
         "backlight",
         "memory",
         "battery",
-        "wireplumber",
+        "pulseaudio",
         "tray",
         "custom/power"
     ],
@@ -319,10 +319,8 @@
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        //"format-source": "{volume}% ",
-        //"format-source-muted": "",
         "format-source": "",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -333,15 +331,10 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "amixer sset Master toggle"
     },
 
     "wireplumber": {
         "on-click": "pavucontrol",
-        "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
-        //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
         "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
         "format-muted": " ",
         "format-source": "",
@@ -360,7 +353,7 @@
     },
 
     "tray": {
-        "icon-size": 15,
-        "spacing": 5
+        "icon-size": 18,
+        "spacing": 6
     }
 }
