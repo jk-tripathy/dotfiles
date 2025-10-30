@@ -1,5 +1,10 @@
 local M = {
     "mfussenegger/nvim-dap-python",
+    dependencies = {
+        "mfussenegger/nvim-dap",
+        "ChristianChiarulli/neovim-codicons",
+        "nvim-neotest/nvim-nio",
+    },
     keys = {
         {
             mode = "n",
@@ -15,4 +20,4 @@ local M = {
     end,
 }
 
-return M
+return {}

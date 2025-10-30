@@ -35,5 +35,4 @@ vim.opt.colorcolumn = "99"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.g.clipboard = 'osc52'
 vim.opt.clipboard = "unnamedplus"
