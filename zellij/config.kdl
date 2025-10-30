@@ -25,8 +25,8 @@ keybinds clear-defaults=true {
         bind "Ctrl Alt <" { Resize "Increase Up"; SwitchToMode "normal"; }
         bind "Ctrl Alt >" { Resize "Increase Down"; SwitchToMode "normal"; }
         // Pane Creation
-        bind "Alt +" { NewPane "right"; SwitchToMode "normal"; }
-        bind "Alt _" { NewPane "down"; SwitchToMode "normal"; }
+        bind "Alt Shift =" { NewPane "right"; SwitchToMode "normal"; }
+        bind "Alt Shift -" { NewPane "down"; SwitchToMode "normal"; }
         bind "Alt f" { ToggleFloatingPanes; SwitchToMode "normal"; }
         // Tab 
         bind "Alt T" { NewTab; SwitchToMode "normal"; }
